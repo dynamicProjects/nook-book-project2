@@ -16,6 +16,7 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
+        <li><a href="/">Logout</a></li>
       </ul>
     </nav>
   </header>
@@ -23,7 +24,7 @@
     <div class="form-container">
       <h1>Contact Us</h1>
       <p>Have a question or need support? Reach out to us!</p>
-      <form id="contact-form">
+        <form action="/contact" method="POST" id="contact-form">
         <div class="input-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required>
