@@ -28,12 +28,16 @@ const contactUS = mongoose.model('contactUS', contactSchema);
 
 router.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded data
 
+// ROUTES
 router.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '../views/signin.html'));
 });
 
 router.get('/contact', function(req, res){
     res.sendFile(path.join(__dirname, '../views/contact.html'));
+});
+router.get('/about', function(req, res){
+    res.sendFile(path.join(__dirname, '../views/about.html'));
 });
 
 // Handle POST request to save user data Signin page
