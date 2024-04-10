@@ -1,0 +1,114 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logo img {
+    max-height: 50px;
+    vertical-align: middle;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav ul li:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .hero {
+    background-image: url('../images/about-background.webp');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+  
+  .mission, .team {
+    background-color: #fff;
+    padding: 24px 0;
+  }
+  
+  .mission h2, .team h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .mission p, .team p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .about-paragraph {
+    max-width: 800px; /* Adjust the value as needed */
+    margin: 0 auto;
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .member {
+    margin: 0 20px;
+    text-align: center;
+  }
+  
+  .member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .member h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .member p {
+    font-size: 1.1em;
+    color: #777;
+  }
+  
+  footer {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
