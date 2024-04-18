@@ -1,6 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const fs = require('fs');
+
+//Read books data
+const data = JSON.parse(fs.readFileSync('./books.json', 'utf-8'));
 
 const router = express.Router();
 
@@ -8,6 +12,12 @@ const router = express.Router();
 mongoose.connect('mongodb://localhost:27017/nookbook', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Error connecting to MongoDB:', err));
+
+  // Add books collection and data to database
+const Books = mongoose.model('Books');
+data.forEach(async function(n) {
+  await Books.findOneAndUpdate( n, n, { new: true, upsert: true });
+});
 
 // LOgin page Schema
 const userSchema = new mongoose.Schema({
