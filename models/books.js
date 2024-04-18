@@ -61,6 +61,10 @@ const booksSchema = new mongoose.Schema({
     productDimensions: {
       type: String,
       trim: true,
+    },
+    ageRange: {
+      type: String,
+      trim: true,
     }
   },
 },

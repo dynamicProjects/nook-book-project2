@@ -4,7 +4,9 @@ const path = require('path');
 const fs = require('fs');
 
 //Read books data
-const data = JSON.parse(fs.readFileSync('./books.json', 'utf-8'));
+const booksData = JSON.parse(fs.readFileSync('./books.json', 'utf-8'));
+//Read featured books data
+const featuredBooksdata = JSON.parse(fs.readFileSync('./featuredBooks.json', 'utf-8'));
 
 const router = express.Router();
 
@@ -13,10 +15,15 @@ mongoose.connect('mongodb://localhost:27017/nookbook', { useNewUrlParser: true, 
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Error connecting to MongoDB:', err));
 
-  // Add books collection and data to database
+// Add books collection and data to database
 const Books = mongoose.model('Books');
-data.forEach(async function(n) {
+booksData.forEach(async function(n) {
   await Books.findOneAndUpdate( n, n, { new: true, upsert: true });
+});
+// Add featured books collection and data to database
+const FeaturedBooks = mongoose.model('FeaturedBooks');
+featuredBooksdata.forEach(async function(n) {
+  await FeaturedBooks.findOneAndUpdate( n, n, { new: true, upsert: true });
 });
 
 // LOgin page Schema

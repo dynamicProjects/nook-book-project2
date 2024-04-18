@@ -291,13 +291,13 @@
   }
 },
 {
-  "title": "",
-  "image": "",
-  "author": "",
-  "tags": {"main": "fiction", "sub": "", "others": ""},
+  "title": "Your Blood, My Bones",
+  "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781338885071_p0_v10_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+  "author": "Kelly Andrew",
+  "tags": {"main": "Teens & YA", "sub": "fiction", "others": "Fantasy, Romance"},
   "purchaseOptions": [{
     "option": "hardcover",
-    "price": "$24.99"
+    "price": "$17.99"
   },
   {
     "option": "paperback",
@@ -305,11 +305,120 @@
   },
   {
     "option": "eBook",
-    "price": "$16.99"
+    "price": "$12.99"
+  }],
+  "overview": "A seductively twisted romance about loyalty, fate, the lengths we go to hide the darkest parts of ourselves . . . and the people who love those parts most of all.\nWyatt Westlock has one plan for the farmhouse she's just inherited — to burn it to the ground. But during her final walkthrough of her childhood home, she makes a shocking discovery in the basement — Peter, the boy she once considered her best friend, strung up in chains and left for dead.\nUnbeknownst to Wyatt, Peter has suffered hundreds of ritualistic deaths on her family's property. Semi-immortal, Peter never remains dead for long, but he can't really live, either. Not while he's bound to the farm, locked in a cycle of grisly deaths and painful rebirths. There's only one way for him to break free. He needs to end the Westlock line.\nHe needs to kill Wyatt.\nWith Wyatt's parents gone, the spells protecting the property have begun to unravel, and dark, ancient forces gather in the nearby forest. The only way for Wyatt to repair the wards is to work with Peter — the one person who knows how to harness her volatile magic. But how can she trust a boy who's sworn an oath to destroy her? When the past turns up to haunt them in the most unexpected way, they are forced to rely on one another to survive, or else tear each other apart.",
+  "productDetails": {
+    "ISBN": "9781338885071",
+    "publisher": "Scholastic, Inc.",
+    "publicationDate": "04/02/2024",
+    "pages": "368",
+    "productDimensions": "5.50(w) x 8.40(h) x 1.20(d)",
+    "ageRange": "13 - 18 Years"
+  }
+},
+{
+  "title": "Funny Story",
+  "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780593441282_p0_v4_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+  "author": "Emily Henry",
+  "tags": {"main": "fiction", "sub": "Romance", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$24.65"
   },
   {
-    "option": "Audio CD",
-    "price": "$36.99"
+    "option": "paperback",
+    "price": "$20.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$12.99"
+  },
+  {
+    "option": "Large Print",
+    "price": "$31.00"
+  }],
+  "overview": "Named a Most Anticipated book of 2024 by TIME ∙ The New York Times ∙ Goodreads ∙ Entertainment Weekly ∙ Today.com ∙ Paste ∙ SheReads ∙ BookPage ∙ Woman's World ∙ The Nerd Daily and more!\nDaphne always loved the way her fiancé Peter told their story. How they met (on a blustery day), fell in love (over an errant hat), and moved back to his lakeside hometown to begin their life together. He really was good at telling it…right up until the moment he realized he was actually in love with his childhood best friend Petra.\nWhich is how Daphne begins her new story: Stranded in beautiful Waning Bay, Michigan, without friends or family but with a dream job as a children’s librarian (that barely pays the bills), and proposing to be roommates with the only person who could possibly understand her predicament: Petra’s ex, Miles Nowak.\nScruffy and chaotic—with a penchant for taking solace in the sounds of heart break love ballads —Miles is exactly the opposite of practical, buttoned up Daphne, whose coworkers know so little about her they have a running bet that she’s either FBI or in witness protection. The roommates mainly avoid one another, until one day, while drowning their sorrows, they form a tenuous friendship and a plan. If said plan also involves posting deliberately misleading photos of their summer adventures together, well, who could blame them?\nBut it’s all just for show, of course, because there’s no way Daphne would actually start her new chapter by falling in love with her ex-fiancé’s new fiancée’s ex…right?",
+  "productDetails": {
+    "ISBN": "9780593441282",
+    "publisher": "Penguin Publishing Group",
+    "publicationDate": "04/23/2024",
+    "pages": "400",
+    "productDimensions": "9.10(w) x 6.20(h) x 1.40(d)"
+  }
+},
+{
+  "title": "I Cheerfully Refuse",
+  "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780802163943_p0_v2_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+  "author": "Leif Enger",
+  "tags": {"main": "fiction", "sub": "Literature", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$28.00"
+  },
+  {
+    "option": "paperback",
+    "price": "$25.20"
+  },
+  {
+    "option": "eBook",
+    "price": "$16.99"
+  }],
+  "overview": "A career defining tour-de-force from New York Times bestselling, award-winning and “formidably gifted” (Chicago Tribune) author of Peace Like a River Leif Enger.\nA storyteller “of great humanity and huge heart” (Minneapolis Star Tribune), Leif Enger debuted in the literary world with Peace Like a River which sold over a million copies and captured readers’ hearts around the globe. Now comes a new milestone in this boldly imaginative author’s accomplished, resonant body of work. Set in a not-too-distant America, I Cheerfully Refuse is the tale of a bereaved and pursued musician embarking under sail on a sentient Lake Superior in search of his departed, deeply beloved, bookselling wife. Rainy, an endearing bear of an Orphean narrator, seeks refuge in the harbors, fogs and remote islands of the inland sea. Encountering lunatic storms and rising corpses from the warming depths, Rainy finds on land an increasingly desperate and illiterate people, a malignant billionaire ruling class, crumbled infrastructure and a lawless society. Amidst the Gulliver-like challenges of life at sea and no safe landings, Rainy is lifted by physical beauty, surprising humor, generous strangers, and an unexpected companion in a young girl who comes aboard. And as his innate guileless nature begins to make an inadvertent rebel of him, Rainy’s private quest for the love of his life grows into something wider and wilder, sweeping up friends and foes alike in his strengthening wake.\nI Cheerfully Refuse epitomizes the “musical, sometimes magical and deeply satisfying kind of storytelling” (Los Angeles Times) for which Leif Enger is cherished.  A rollicking narrative in the most evocative of settings, this latest novel is a symphony against despair and a rallying cry for the future.",
+  "productDetails": {
+    "ISBN": "9780802163943",
+    "publisher": "Grove/Atlantic, Inc.",
+    "publicationDate": "04/02/2024",
+    "pages": "336",
+    "productDimensions": "6.30(w) x 9.20(h) x 1.40(d)"
+  }
+},
+{
+  "title": "Throne of the Fallen",
+  "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780316581493_p1_v2%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+  "author": "Kerri Maniscalco",
+  "tags": {"main": "fiction", "sub": "fantasy", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$26.10"
+  },
+  {
+    "option": "Signed Book",
+    "price": "$29.00"
+  },
+  {
+    "option": "paperback",
+    "price": "$19.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  }],
+  "overview": "Kerri Maniscalco makes her adult debut with this New York Times bestselling sensation, a \"hot\" new standalone fantasy romance (Jennifer L. Armentrout) about a dark prince battling an impossible curse—and the artist who might be the only one who can set him free.\nSinner. Villain. Wicked.\nThe Prince of Envy has never claimed to be a saint. But when a cryptic note arrives, signaling the beginning of a deadly game, he knows it will take more than a hint of sin to win and save his falling demon court. Riddles, hexed objects, anonymous players, nothing will stand in his way, though none of his meticulous plans prepare him for her, the frustrating artist who ignites his sin like no other...\nVirtuous. Darling. Liar.\nThe trouble with scoundrels and blackguards is that they haven't a modicum of honor, a fact Miss Camilla Antonius learns after one desperate mistake allows Waverly Green's most notorious rake to blackmail her. To avoid a ruinous scandal, Camilla is forced to enter a devil's bargain with Envy, little expecting his game will awaken her true nature...\nTogether, Envy and Camilla must embark on a perilous journey through the Underworld—from glittering demon courts to the sultry vampire realm and beyond—while trying to avoid the most dangerous trap of all: falling in love.",
+  "productDetails": {
+    "ISBN": "9780316581493",
+    "publisher": "Little, Brown and Company",
+    "publicationDate": "08/06/2024",
+    "pages": "592",
+    "productDimensions": "5.50(w) x 8.25(h) x (d)"
+  }
+},
+{
+  "title": "",
+  "image": "",
+  "author": "",
+  "tags": {"main": "fiction", "sub": "Mystery & Crime", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$17.99"
+  },
+  {
+    "option": "paperback",
+    "price": "$14.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$12.99"
   }],
   "overview": "",
   "productDetails": {
@@ -317,6 +426,61 @@
     "publisher": "",
     "publicationDate": "",
     "pages": "",
-    "productDimensions": "6.20(w) x 8.90(h) x 1.50(d)"
+    "productDimensions": "",
+    "ageRange": ""
+  }
+},
+{
+  "title": "",
+  "image": "",
+  "author": "",
+  "tags": {"main": "", "sub": "", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$17.99"
+  },
+  {
+    "option": "paperback",
+    "price": "$14.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$12.99"
+  }],
+  "overview": "",
+  "productDetails": {
+    "ISBN": "",
+    "publisher": "",
+    "publicationDate": "",
+    "pages": "",
+    "productDimensions": "",
+    "ageRange": ""
+  }
+},
+{
+  "title": "",
+  "image": "",
+  "author": "",
+  "tags": {"main": "", "sub": "", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$17.99"
+  },
+  {
+    "option": "paperback",
+    "price": "$14.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$12.99"
+  }],
+  "overview": "",
+  "productDetails": {
+    "ISBN": "",
+    "publisher": "",
+    "publicationDate": "",
+    "pages": "",
+    "productDimensions": "",
+    "ageRange": ""
   }
 }]
