@@ -8,13 +8,171 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <!-- Font awesome CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/home.css">
     </head>
     <body id="home">
-        <div>
+            <header>
+                <div>
+                    <nav class="navbar navbar-expand-md navbar-dark">
+                        <div class="w-100 d-flex flex-column navTop">
+                            <div class="d-flex flex-row">
+                                <ul class="navbar-nav mt-n2 d-flex flex-row">
+                                    <li class="nav-item p-md-3 p-2 ml-n2 ml-md-n3">
+                                        <a href="#">Bestsellers</a>
+                                    </li>
+                                    <li class="nav-item p-md-3 p-2">
+                                        <a href="/about">About</a>
+                                    </li>
+                                    <li class="nav-item p-md-3 p-2">
+                                        <a href="/contact">Contact</a>
+                                    </li>
+                                </ul>
+                                <ul class="navbar-nav mt-n2 d-flex flex-row ml-auto">
+                                    <li class="nav-item p-md-3 p-2 ml-n3">
+                                        <a href="/signin">Sign In</a>
+                                    </li>
+                                    <li class="nav-item p-md-3 p-2">
+                                        <a href="#">Wishlist</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between">
+                                <div class="logoSearch">
+                                    <a class="d-flex flex-row" href="/">
+                                        <img src="../images/booklogo.webp" alt="Splashes">
+                                        <p class="d-none d-md-block">NookBook</p>
+                                    </a>
+                                </div>
+                                <!-- Hamburger Menu -->
+                                <button id="nav-collapsed-button" class="navbar-toggler border-0" type="button" data-toggle="collapse" 
+                                    data-target="#navbarContent" 
+                                    aria-controls="navbarContent" aria-expanded="false" 
+                                    aria-label="Toggle navigation">
+                                    
+                                    <div class="nav-icon">
+                                        <span class="bar bar-1"></span>
+                                        <span class="bar bar-2"></span>
+                                        <span class="bar bar-3"></span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse hamburgerMenu" id="navbarContent">
+                                <ul class="navbar-nav w-100 mt-md-1 mx-xl-3 d-flex justify-content-between">
+                                    <li class="nav-item p-3 px-xl-2">
+                                        <a href="#">Books</a>
+                                    </li>
+                                    <li class="nav-item p-3 px-xl-2">
+                                        <a href="#">Fiction</a>
+                                    </li>
+                                    <li class="nav-item p-3 px-xl-2">
+                                        <a href="#">Nonfiction</a>
+                                    </li>
+                                    <li class="nav-item p-3 px-xl-2">
+                                        <a href="#">Audiobooks</a>
+                                    </li>
+                                    <li class="nav-item p-3 px-xl-2">
+                                        <a href="#">Tenns & YA</a>
+                                    </li>
+                                    <li class="nav-item p-3 px-xl-2">
+                                        <a href="#">Kids</a>
+                                    </li>
+                                    <li class="nav-item p-3 px-xl-2">
+                                        <a href="#">Biography</a>
+                                    </li>
+                                    <li class="nav-item p-3 px-xl-2">
+                                        <a href="#">Classic</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="modalContainer" class="collapse"></div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <main>
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                      <img src="../images/homeSlideshow/1.jpg" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="../images/homeSlideshow/2.jpeg" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="../images/homeSlideshow/3.png" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="../images/homeSlideshow/4.jpg" style="width:100%">
+                    </div>
+                    
+                </div>
+                <div style="text-align:center">
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                  </div>
+            </main>
+            <footer class="container-fluid mt-5 py-5">
+                <div class="container-xl py-5">
+                    <div class="row font-weight-bold">
+                        <div class="col-xl-6 text-xl-left">
+                            <ul>
+                                <li><a>Bestsellers</a></li>
+                                <li><a>About</a></li>
+                                <li><a>Contact</a></li>
+                                <li><a>Register / Sign in</a></li>
+                                <li><a>Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-6 text-xl-right pr-xl-5">
+                            <a href="#" class="fa-brands fa-linkedin-in rounded-circle"></a>
+                            <a href="#" class="fa-brands fa-instagram rounded-circle"></a>
+                            <a href="#" class="fa-brands fa-twitter rounded-circle"></a>
+                            <a href="#" class="fa-brands fa-yelp rounded-circle"></a>
+                            <a href="#" class="fa-brands fa-facebook-f rounded-circle"></a>
+                            <a href="#" class="fa-brands fa-youtube rounded-circle"></a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="footerBottom">
+                        <div id="copyright">
+                            <p>&copy; 2022 NookBook.</p>
+                            <p class="mt-n2">All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="../js/common.js"></script>
+        <script>
+            let slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 2000); // Change image every 10 seconds
+            }
+            </script>
     </body>
 </html>

@@ -30,6 +30,10 @@ router.use(express.urlencoded({ extended: true })); // Middleware to parse URL-e
 
 // ROUTES
 router.get('/', function(req, res){
+    res.sendFile(path.join(__dirname, '../views/index.html'));
+});
+
+router.get('/signin', function(req, res){
     res.sendFile(path.join(__dirname, '../views/signin.html'));
 });
 

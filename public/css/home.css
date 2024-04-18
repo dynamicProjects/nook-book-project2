@@ -1,1 +1,216 @@
 /* Body */
+#home {
+    font-family: 'Open Sans';
+}
+
+.titleImageSection {
+    background: url(../images/home.jpeg) no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    width: 100%;
+    align-items: center;
+}
+
+.titleImageSection h1 {
+    font-family: 'Bodoni Moda 72 bold';
+}
+
+.titleButtons {
+    margin-top: 4em;
+    font-family: 'Open Sans Bold';
+}
+
+.titleButtons button {
+    color: #03B1F4;
+    padding: 1em 1em;
+    margin: 0.2em;
+}
+
+.registerHiring {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 0.5em;
+}
+
+.registerHiring img {
+    width: 100%;
+    padding: 0.5em 0;
+}
+
+.handsOnTeaching {
+    width: 100%;
+    padding-top: 0.5em;
+    background-image: url("../images/home-hands-on-teaching.jpeg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 2200px;
+}
+
+.handsOnTeaching {
+    width: 100%;
+    padding-top: 0.5em;
+    background-image: none;
+}
+
+.handsOnTeachingText {
+    width: 100%;
+    padding: 5em 3em;
+}
+
+.handsOnTeachingText h2 {
+    padding-bottom: 1em;
+    font-family: 'Bodoni Moda';
+    font-weight: bolder;
+}
+
+.handsOnTeachingText p, .handsOnTeachingText ul {
+    padding-bottom: 1em;
+}
+
+.offersTitle {
+    font-family: 'Open Sans Bold';
+}
+
+.handsOnTeachingText ul li span {
+    text-decoration: underline;
+}
+
+.registerButtonContainer {
+    text-align: center;
+    font-family: 'Open Sans Bold';
+}
+
+.handsOnTeachingText button {
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #03B1F4;
+}
+
+.locations {
+    width: 100%;
+    position: relative;
+    background-image: url("../images/home-our-locations-bg.jpeg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+.locations .map {
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0%, -50%);
+    visibility: hidden;
+}
+
+.locationsText {
+    width: 100%;
+    text-align: center;
+    padding: 5em 2em;
+    color: white;
+}
+
+.locationsText h1 {
+    padding-bottom: 1em;
+    font-family: 'Bodoni Moda 72 bold';
+    font-weight: bolder;
+}
+
+.locationsText h3 {
+    padding-bottom: 1em;
+    font-family: 'Bodoni Moda';
+    font-weight: bolder;
+}
+
+.locationsText p {
+    color: #e4e4e4;
+    padding-bottom: 1em;
+}
+
+.locationsText button {
+    font-weight: bold;
+    background-color: #03B1F4;
+}
+
+.awards {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.awards h1 {
+    font-family: 'Bodoni Moda';
+    font-weight: 600;
+}
+
+.awards .awardImages {
+    padding-top: 30px;
+}
+
+.awards .awardImages .row img {
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 575px) {
+    .titleImageSection {
+        height: 350px;
+    }
+
+    .titleImageSection h1 {
+        font-size: 7vw;
+        margin-top: -1.25em;
+    }
+
+    .titleButtons {
+        width: 60%;
+        margin-top: 2em;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .titleImageSection {
+        height: 500px;
+    }
+
+    .titleButtons {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .titleImageSection {
+        height: 800px;
+    }
+
+    .titleImageSection h1 {
+        font-size: 48px;
+    }
+
+    .titleButtons {
+        width: 40%;
+    }
+
+    .handsOnTeaching {
+        width: 100%;
+        padding-top: 0.5em;
+        background-image: url("../images/home-hands-on-teaching.jpeg");
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 2200px;
+    }
+
+    .handsOnTeachingText {
+        width: 50%;
+        padding: 3em 6em;
+    }
+
+    .locationsText {
+        width: 525px;
+        padding: 8em 5em;
+    }
+    .locations .map {
+        visibility: visible;
+    }
+}
