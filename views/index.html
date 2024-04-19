@@ -8,6 +8,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <!-- Font awesome CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/common.css">
         <link rel="stylesheet" href="../css/home.css">
     </head>
@@ -72,7 +75,7 @@
                                         <a href="#">Audiobooks</a>
                                     </li>
                                     <li class="nav-item p-3 px-xl-2">
-                                        <a href="#">Tenns & YA</a>
+                                        <a href="#">Teens & YA</a>
                                     </li>
                                     <li class="nav-item p-3 px-xl-2">
                                         <a href="#">Kids</a>
@@ -91,31 +94,20 @@
                 </div>
             </header>
             <main>
-                <div class="slideshow-container">
-
-                    <div class="mySlides fade">
-                      <img src="../images/homeSlideshow/1.jpg" style="width:100%">
-                    </div>
-                    
-                    <div class="mySlides fade">
-                      <img src="../images/homeSlideshow/2.jpeg" style="width:100%">
-                    </div>
-                    
-                    <div class="mySlides fade">
-                      <img src="../images/homeSlideshow/3.png" style="width:100%">
-                    </div>
-                    
-                    <div class="mySlides fade">
-                      <img src="../images/homeSlideshow/4.jpg" style="width:100%">
-                    </div>
-                    
+                <div class="slideshow-container"></div>
+                <div class="slideshow-dot-container" style="text-align:center"></div>
+                <div class="introduction">
+                    <p class="title">
+                        Welcome to NookBook, your cozy corner of the internet for all things literary! 
+                    </p>
+                    <p>
+                        Whether you're an avid reader, a casual browser, or a bookworm in search of your next 
+                        adventure, you've come to the right place. Dive into our diverse collection of titles 
+                        spanning every genre imaginable, from timeless classics to the latest page-turners. 
+                        With NookBook, discovering your next favorite read is just a click away. So, grab a cup of tea, 
+                        settle into your favorite reading nook, and let the journey begin!
+                    </p>
                 </div>
-                <div style="text-align:center">
-                    <span class="dot"></span> 
-                    <span class="dot"></span> 
-                    <span class="dot"></span> 
-                    <span class="dot"></span> 
-                  </div>
             </main>
             <footer class="container-fluid mt-5 py-5">
                 <div class="container-xl py-5">
@@ -155,7 +147,18 @@
         <script src="../js/common.js"></script>
         <script>
             let slideIndex = 0;
-            showSlides();
+            $.get("http://localhost:3000/featuredList", function(featured){
+                var i;
+                for (i = 0; i < featured.length; i++) {
+                    $( ".slideshow-container" ).append(`
+                        <div class="mySlides fade">
+                            <img src="${featured[i].banner}" style="width:100%">
+                        </div>`
+                    );
+                    $( ".slideshow-dot-container" ).append(`<span class="dot"></span> `);
+                }
+                showSlides();
+            });
             
             function showSlides() {
               let i;

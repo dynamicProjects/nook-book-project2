@@ -44,21 +44,14 @@ header {
 }
 
 nav ul li {
-    font-family: 'Open Sans Bold';
+    font-family: "Lato", sans-serif;
+    font-style: normal;
     font-weight: 500;
     font-size: 14px;
 }
 
 nav ul li a {
     color: #FFFFFF;
-}
-
-.registerButton button {
-    font-family: 'Open Sans Bold';
-    font-weight: 500;
-    font-size: 14px;
-    color: #03B1F4;
-    width: 100%;
 }
 
 /* @media only screen and (max-width: 767px) {
@@ -139,19 +132,6 @@ footer hr {
     border: none
 }
 
-.footerContacts .location {
-    font-weight: bold;
-    font-family: 'Open Sans Bold';
-}
-
-.footerContacts .phone {
-    text-decoration: underline;
-}
-
-#footerBottom .sponsors img {
-    padding: 0 0.5em;
-}
-
 @media only screen and (max-width: 576px) {
     footer .footerLogo {
         width: 60%;
@@ -179,11 +159,6 @@ footer hr {
     #footerBottom #copyright {
         float: right;
     }
-
-    #footerBottom .sponsors {
-        float: left;
-        width: 370px;
-    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -197,152 +172,5 @@ footer hr {
 
     #footerBottom {
         padding: 1em 3.5em;
-    }
-
-    #footerBottom .sponsors {
-        width: 800px;
-        margin-left: -6em;
-    }
-}
-
-
-
-.dropdown-menu {
-    display: flex;
-    /* Changed to flex to manage the column layout */
-    flex-wrap: wrap;
-    /* Allows flex items to wrap as needed */
-    justify-content: center;
-    /* Center flex items horizontally */
-    align-items: flex-start;
-    /* Align flex items to the top */
-    background-color: #ffffff;
-    /* whote background color */
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
-    padding: 20px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-70%);
-    /* Minimum width */
-    width: 1000px;
-    /* Ensures dropdown menu width is as desired */
-    min-width: 600px;
-    /* Minimum width */
-}
-
-.dropdown-menu table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 15px 10px;
-    /* Adjust the spacing between columns and rows */
-}
-
-.dropdown-menu td {
-    min-width: 200px;
-    /* Increased minimum width for each column */
-    padding: 10px;
-    /* Spacing for content inside cells */
-    vertical-align: top;
-    /* Aligns content to the top */
-}
-
-.dropdown-menu p {
-    font-weight: bold;
-    margin-bottom: 10px;
-    /* Space below the region title */
-    color: #333;
-    /* Title color */
-}
-
-.dropdown-menu a {
-    display: block;
-    /* Each link is on its own line */
-    padding: 3px 0;
-    /* Padding above and below each link */
-    color: #007bff;
-    /* Bootstrap default link color */
-    text-decoration: none;
-    /* No underline */
-    font-size: 14px;
-    /* Adjust as needed */
-}
-
-.dropdown-menu a:hover {
-    text-decoration: underline;
-    /* Underline on hover */
-}
-
-.nav-item {
-    position: relative;
-}
-
-.nav-item.dropdown .dropdown-menu {
-    display: none;
-    /* Override display none when dropdown is active */
-}
-
-#navbarDropdownMenuLink {
-    color: #ffffff;
-    /* Change text color */
-    transform: translateY(-9px);
-    /* Moves the link down 10px */
-
-}
-
-
-
-
-.mySlides {
-    display: none;
-}
-
-img {
-    vertical-align: middle;
-}
-
-/* Slideshow container */
-.slideshow-container {
-    width: 100%;
-    height: 330px;
-    position: relative;
-    margin: auto;
-    padding-top: 0.5em;
-}
-
-.slideshow-container .mySlides img {
-    object-fit: cover;
-    height: 350px;
-}
-
-/* Slideshow dots */
-.dot {
-    height: 8px;
-    width: 8px;
-    margin: 0 2px;
-    z-index: 100;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active {
-    background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 9.5s;
-}
-
-@keyframes fade {
-    from {
-        opacity: .8
-    }
-
-    to {
-        opacity: 1
     }
 }

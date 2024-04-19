@@ -50,6 +50,16 @@ router.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '../views/index.html'));
 });
 
+router.get('/featuredList', (req, res) => {
+  FeaturedBooks.find()
+    .then((featuredList) => {
+      res.send(featuredList);
+    })
+    .catch(() => { 
+      res.send('Sorry! Something went wrong.'); 
+    });
+});
+
 router.get('/signin', function(req, res){
     res.sendFile(path.join(__dirname, '../views/signin.html'));
 });
