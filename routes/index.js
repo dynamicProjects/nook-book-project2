@@ -1,6 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const fs = require('fs');
+
+//Read books data
+const booksData = JSON.parse(fs.readFileSync('./books.json', 'utf-8'));
+//Read featured books data
+const featuredBooksdata = JSON.parse(fs.readFileSync('./featuredBooks.json', 'utf-8'));
 
 const router = express.Router();
 
@@ -8,6 +14,17 @@ const router = express.Router();
 mongoose.connect('mongodb://localhost:27017/nookbook', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Error connecting to MongoDB:', err));
+
+// Add books collection and data to database
+const Books = mongoose.model('Books');
+booksData.forEach(async function(n) {
+  await Books.findOneAndUpdate( n, n, { new: true, upsert: true });
+});
+// Add featured books collection and data to database
+const FeaturedBooks = mongoose.model('FeaturedBooks');
+featuredBooksdata.forEach(async function(n) {
+  await FeaturedBooks.findOneAndUpdate( n, n, { new: true, upsert: true });
+});
 
 // LOgin page Schema
 const userSchema = new mongoose.Schema({
@@ -30,6 +47,20 @@ router.use(express.urlencoded({ extended: true })); // Middleware to parse URL-e
 
 // ROUTES
 router.get('/', function(req, res){
+    res.sendFile(path.join(__dirname, '../views/index.html'));
+});
+
+router.get('/featuredList', (req, res) => {
+  FeaturedBooks.find()
+    .then((featuredList) => {
+      res.send(featuredList);
+    })
+    .catch(() => { 
+      res.send('Sorry! Something went wrong.'); 
+    });
+});
+
+router.get('/signin', function(req, res){
     res.sendFile(path.join(__dirname, '../views/signin.html'));
 });
 
