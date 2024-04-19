@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
+const { title } = require('process');
 
 //Read books data
 const booksData = JSON.parse(fs.readFileSync('./books.json', 'utf-8'));
@@ -18,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/nookbook', { useNewUrlParser: true, 
 // Add books collection and data to database
 const Books = mongoose.model('Books');
 booksData.forEach(async function(n) {
-  await Books.findOneAndUpdate( n, n, { new: true, upsert: true });
+  await Books.findOneAndUpdate( {title: n.title, image: n.image, author: n.author}, n, { new: true, upsert: true });
 });
 // Add featured books collection and data to database
 const FeaturedBooks = mongoose.model('FeaturedBooks');
@@ -50,10 +51,24 @@ router.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '../views/index.html'));
 });
 
-router.get('/featuredList', (req, res) => {
-  FeaturedBooks.find()
+router.get('/book/:title/:author', function(req, res) {
+  res.sendFile(path.join(__dirname, '../views/book.html'));
+});
+
+router.get('/featuredList', async (req, res) => {
+  await FeaturedBooks.find()
     .then((featuredList) => {
       res.send(featuredList);
+    })
+    .catch(() => { 
+      res.send('Sorry! Something went wrong.'); 
+    });
+});
+
+router.get('/books', async (req, res) => {
+  await Books.find()
+    .then((books) => {
+      res.send(books);
     })
     .catch(() => { 
       res.send('Sorry! Something went wrong.'); 

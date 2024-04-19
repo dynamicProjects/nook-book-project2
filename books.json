@@ -404,48 +404,171 @@
   }
 },
 {
-  "title": "",
-  "image": "",
-  "author": "",
-  "tags": {"main": "fiction", "sub": "Mystery & Crime", "others": ""},
+  "title": "You Are Here",
+  "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780063419858_p1_v3%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+  "author": "David Nicholls",
+  "tags": {"main": "fiction", "sub": "Literary Fiction", "others": ""},
   "purchaseOptions": [{
     "option": "hardcover",
-    "price": "$17.99"
+    "price": "$27.00"
   },
   {
     "option": "paperback",
-    "price": "$14.99"
+    "price": "$20.99"
   },
   {
     "option": "eBook",
-    "price": "$12.99"
+    "price": "$14.99"
+  },
+  {
+    "option":"Audio CD",
+    "price": "$41.99"
   }],
-  "overview": "",
+  "overview": "From the internationally bestselling and Booker Prize-longlisted author of One Day, one of the most enduring love stories of its generation, comes an uplifting and unputdownable love story about second chances.\nSometimes you need to get lost to find your way . . .\nMichael is coming undone. Adrift after his wife's departure, he has begun taking himself on long, solitary walks across the English countryside. Becoming ever more reclusive, he’ll do anything to avoid his empty house.\nMarnie, on the other hand, is stuck. Hiding alone in her London flat, she avoids old friends and any reminders of her rotten, selfish ex-husband. Curled up with a good book, she’s battling the long afternoons of a life that feels like it’s passing her by.\nWhen a persistent mutual friend and some very unpredictable weather conspire to toss Michael and Marnie together on the most epic of ten-day hikes, neither of them can think of anything worse. Until, of course, they discover exactly what they’ve been looking for.\nMichael and Marnie are on the precipice of a bright future . . . if they can survive the journey.\nA hilarious, hopeful, and heartwarming love story—the novel beloved New York Times bestselling author David Nicholls calls “my funniest book yet”—You Are Here is a bittersweet and hopeful story of first encounters, second chances, and finding the way home.",
   "productDetails": {
-    "ISBN": "",
-    "publisher": "",
-    "publicationDate": "",
-    "pages": "",
-    "productDimensions": "",
-    "ageRange": ""
+    "ISBN": "9780063419858",
+    "publisher": "HarperCollins Publishers",
+    "publicationDate": "05/28/2024",
+    "pages": "368",
+    "productDimensions": "6.00(w) x 9.00(h) x 1.17(d)"
+  }
+},
+{
+  "title": "The Heart in Winter: A Novel",
+  "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780385550598_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+  "author": "Kevin Barry",
+  "tags": {"main": "fiction", "sub": "historical fiction", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$28.00"
+  },
+  {
+    "option": "paperback",
+    "price": "$17.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  }],
+  "overview": "Award-winning writer Kevin Barry’s first novel set in America, a savagely funny and achingly romantic tale of young lovers on the lam in 1890s Montana.\nOctober 1891. A hard winter approaches across the Rocky Mountains. The city of Butte, Montana is rich on copper mines and rampant with vice and debauchery among a hard-living crowd of immigrant Irish workers. Here we find Tom Rourke, a young poet and ballad-maker of the town, but also a doper, a drinker, and a fearsome degenerate. Just as he feels his life is heading nowhere fast, Polly Gillespie arrives in town as the new bride of the extremely devout mine captain Long Anthony Harrington. A thunderbolt love affair takes spark between Tom and Polly and they strike out west on a stolen horse, moving through the badlands of Montana and Idaho, and briefly an idyll of wild romance perfects itself. But a posse of deranged Cornish gunmen are soon in hot pursuit and closing in fast. With everything to lose and the safety and anonymity of San Francisco still a distant speck on their horizon, the choices they make will haunt them for the rest of their lives.\nIn this love story for the ages—lyrical, profane and propulsive—Kevin Barry has once again demonstrated himself to be a master stylist, an unrivalled humourist, and a true poet of the human heart.",
+  "productDetails": {
+    "ISBN": "9780385550598",
+    "publisher": "Knopf Doubleday Publishing Group",
+    "publicationDate": "07/09/2024",
+    "pages": "256",
+    "productDimensions": "5.00(w) x 7.50(h) x 0.72(d)"
+  }
+},
+{
+  "title": "The Bright Sword: A Novel of King Arthur",
+  "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780593834596_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+  "author": "Lev Grossman",
+  "tags": {"main": "fiction", "sub": "Science Fiction & Fantasy", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$31.50"
+  },
+  {
+    "option": "paperback",
+    "price": "$26.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$29.25"
+  }],
+  "overview": "The #1 New York Times bestselling author of the Magicians trilogy returns with a triumphant reimagining of the King Arthur legend for the new millennium\nA gifted young knight named Collum arrives at Camelot to compete for a spot on the Round Table, only to find that he’s too late. The king died two weeks ago at the Battle of Camlann, leaving no heir, and only a handful of the knights of the Round Table survive.\nThey aren’t the hero's of legend, like Lancelot or Gawain. They’re the oddballs of the Round Table, from the edges of the stories, like Sir Palomides, the Saracen Knight, and Sir Dagonet, Arthur’s fool, who was knighted as a joke. They’re joined by Nimue, who was Merlin’s apprentice until she turned on him and buried him under a hill. Together this ragtag fellowship will set out to rebuild Camelot in a world that has lost its balance.\nBut Arthur’s death has revealed Britain’s fault lines. God has abandoned it, and the fairies and monsters and old gods are returning, led by Arthur’s half-sister Morgan le Fay. Kingdoms are turning on each other, warlords lay siege to Camelot and rival factions are forming around the disgraced Lancelot and the fallen Queen Guinevere. It is up to Collum and his companions to reclaim Excalibur, solve the mysteries of this ruined world and make it whole again. But before they can restore Camelot they’ll have to learn the truth of why the lonely, brilliant King Arthur fell, and lay to rest the ghosts of his troubled family and of Britain’s dark past.\nThe first major Arthurian epic of the new millennium, The Bright Sword is steeped in tradition, full of duels and quests, battles and tournaments, magic swords and Fisher Kings. It also sheds a fresh light on Arthur’s Britain, a diverse, complex nation struggling to come to terms with its bloody history. The Bright Sword is a story about imperfect men and women, full of strength and pain, who are looking for a way to reforge a broken land in spite of being broken themselves.",
+  "productDetails": {
+    "ISBN": "9780593834596",
+    "publisher": "Penguin Publishing Group",
+    "publicationDate": "07/16/2024",
+    "pages": "688",
+    "productDimensions": "6.12(w) x 9.25(h) x 1.72(d)"
+  }
+},
+{
+  "title": "The Black Bird Oracle",
+  "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780593724774_p0_v3_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+  "author": "Deborah Harkness",
+  "tags": {"main": "fiction", "sub": "Science Fiction & Fantasy", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$32.50"
+  },
+  {
+    "option": "paperback",
+    "price": "$27.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$13.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$32.49"
+  }],
+  "overview": "Diana Bishop journeys to the darkest places within herself—and her family history—in the highly anticipated fifth novel of the beloved #1 New York Times bestselling All Souls series.\nDeborah Harkness first introduced the world to Diana Bishop, an Oxford scholar and witch, and vampire geneticist Matthew de Clermont in A Discovery of Witches. Drawn to each other despite long-standing taboos, these two otherworldly beings found themselves at the center of a battle for a lost, enchanted manuscript known as Ashmole 782. Since then, they have fallen in love, traveled to Elizabethan England, dissolved the Covenant between the three species, and awoken the dark powers within Diana’s family line.\nNow, Diana and Matthew receive a formal demand from the Congregation: They must test the magic of their seven-year-old twins, Pip and Rebecca. Concerned with their safety and desperate to avoid the same fate that led her parents to spellbind her, Diana decides to forge a different path for her family’s future and answers a message from a great-aunt she never knew existed, Gwyneth Proctor, whose invitation simply reads: It’s time you came home, Diana.\nOn the hallowed ground of Ravenswood, the Proctor family home, and under the tutelage of Gwyneth, a talented witch grounded in higher magic, a new era begins for Diana: a confrontation with her family’s dark past and a reckoning for her own desire for even greater power—if she can let go, finally, of her fear of wielding it.\nIn this stunning new novel, grand in scope, Deborah Harkness deepens the beloved world of All Souls with powerful new magic and long-hidden secrets, and the path Diana finds at Ravenswood leads to the most consequential moments yet in this cherished series.",
+  "productDetails": {
+    "ISBN": "9780593724774",
+    "publisher": "Random House Publishing Group",
+    "publicationDate": "07/16/2024",
+    "pages": "464",
+    "productDimensions": "6.00(w) x 9.00(h) x 1.16(d)"
+  }
+},
+{
+  "title": "You Like It Darker: Stories",
+  "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781668037713_p0_v2_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+  "author": "Stephen King",
+  "tags": {"main": "fiction", "sub": "thrillers", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$21.00"
+  },
+  {
+    "option": "paperback",
+    "price": "$19.69"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  },
+  {
+    "option": "Audio CD",
+    "price": "$54.99"
+  }],
+  "overview": "From legendary storyteller and master of short fiction Stephen King comes an extraordinary new collection of twelve short stories, many never-before-published, and some of his best EVER.“You like it darker? Fine, so do I,” writes Stephen King in the afterword to this magnificent new collection of twelve stories that delve into the darker part of life—both metaphorical and literal. King has, for half a century, been a master of the form, and these stories, about fate, mortality, luck, and the folds in reality where anything can happen, are as rich and riveting as his novels, both weighty in theme and a huge pleasure to read. King writes to feel \"the exhilaration of leaving ordinary day-to-day life behind,\" and in You Like It Darker, readers will feel that exhilaration too, again and again.\n“Two Talented Bastids” explores the long-hidden secret of how the eponymous gentlemen got their skills. In “Danny Coughlin’s Bad Dream,” a brief and unprecedented psychic flash upends dozens of lives, Danny’s most catastrophically. In “Rattlesnakes,” a sequel to Cujo, a grieving widower travels to Florida for respite and instead receives an unexpected inheritance—with major strings attached. In “The Dreamers,” a taciturn Vietnam vet answers a job ad and learns that there are some corners of the universe best left unexplored. “The Answer Man” asks if prescience is good luck or bad and reminds us that a life marked by unbearable tragedy can still be meaningful.\nKing’s ability to surprise, amaze, and bring us both terror and solace remains unsurpassed. Each of these stories holds its own thrills, joys, and mysteries; each feels iconic. You like it darker? You got it.",
+  "productDetails": {
+    "ISBN": "9781668037713",
+    "publisher": "Scribner",
+    "publicationDate": "05/21/2024",
+    "pages": "512",
+    "productDimensions": "6.12(w) x 9.25(h) x 1.50(d)"
   }
 },
 {
   "title": "",
   "image": "",
   "author": "",
-  "tags": {"main": "", "sub": "", "others": ""},
+  "tags": {"main": "fiction", "sub": "", "others": ""},
   "purchaseOptions": [{
     "option": "hardcover",
-    "price": "$17.99"
+    "price": "$31.50"
   },
   {
     "option": "paperback",
-    "price": "$14.99"
+    "price": "$26.99"
   },
   {
     "option": "eBook",
-    "price": "$12.99"
+    "price": "$14.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$29.25"
   }],
   "overview": "",
   "productDetails": {
@@ -453,26 +576,29 @@
     "publisher": "",
     "publicationDate": "",
     "pages": "",
-    "productDimensions": "",
-    "ageRange": ""
+    "productDimensions": "6.12(w) x 9.25(h) x 1.72(d)"
   }
 },
 {
   "title": "",
   "image": "",
   "author": "",
-  "tags": {"main": "", "sub": "", "others": ""},
+  "tags": {"main": "fiction", "sub": "", "others": ""},
   "purchaseOptions": [{
     "option": "hardcover",
-    "price": "$17.99"
+    "price": "$31.50"
   },
   {
     "option": "paperback",
-    "price": "$14.99"
+    "price": "$26.99"
   },
   {
     "option": "eBook",
-    "price": "$12.99"
+    "price": "$14.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$29.25"
   }],
   "overview": "",
   "productDetails": {
@@ -480,7 +606,276 @@
     "publisher": "",
     "publicationDate": "",
     "pages": "",
-    "productDimensions": "",
-    "ageRange": ""
+    "productDimensions": "6.12(w) x 9.25(h) x 1.72(d)"
+  }
+},
+{
+  "title": "",
+  "image": "",
+  "author": "",
+  "tags": {"main": "fiction", "sub": "", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$31.50"
+  },
+  {
+    "option": "paperback",
+    "price": "$26.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$29.25"
+  }],
+  "overview": "",
+  "productDetails": {
+    "ISBN": "",
+    "publisher": "",
+    "publicationDate": "",
+    "pages": "",
+    "productDimensions": "6.12(w) x 9.25(h) x 1.72(d)"
+  }
+},
+{
+  "title": "",
+  "image": "",
+  "author": "",
+  "tags": {"main": "fiction", "sub": "", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$31.50"
+  },
+  {
+    "option": "paperback",
+    "price": "$26.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$29.25"
+  }],
+  "overview": "",
+  "productDetails": {
+    "ISBN": "",
+    "publisher": "",
+    "publicationDate": "",
+    "pages": "",
+    "productDimensions": "6.12(w) x 9.25(h) x 1.72(d)"
+  }
+},
+{
+  "title": "",
+  "image": "",
+  "author": "",
+  "tags": {"main": "fiction", "sub": "", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$31.50"
+  },
+  {
+    "option": "paperback",
+    "price": "$26.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$29.25"
+  }],
+  "overview": "",
+  "productDetails": {
+    "ISBN": "",
+    "publisher": "",
+    "publicationDate": "",
+    "pages": "",
+    "productDimensions": "6.12(w) x 9.25(h) x 1.72(d)"
+  }
+},
+{
+  "title": "",
+  "image": "",
+  "author": "",
+  "tags": {"main": "fiction", "sub": "", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$31.50"
+  },
+  {
+    "option": "paperback",
+    "price": "$26.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$29.25"
+  }],
+  "overview": "",
+  "productDetails": {
+    "ISBN": "",
+    "publisher": "",
+    "publicationDate": "",
+    "pages": "",
+    "productDimensions": "6.12(w) x 9.25(h) x 1.72(d)"
+  }
+},
+{
+  "title": "",
+  "image": "",
+  "author": "",
+  "tags": {"main": "fiction", "sub": "", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$31.50"
+  },
+  {
+    "option": "paperback",
+    "price": "$26.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$29.25"
+  }],
+  "overview": "",
+  "productDetails": {
+    "ISBN": "",
+    "publisher": "",
+    "publicationDate": "",
+    "pages": "",
+    "productDimensions": "6.12(w) x 9.25(h) x 1.72(d)"
+  }
+},
+{
+  "title": "",
+  "image": "",
+  "author": "",
+  "tags": {"main": "fiction", "sub": "", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$31.50"
+  },
+  {
+    "option": "paperback",
+    "price": "$26.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$29.25"
+  }],
+  "overview": "",
+  "productDetails": {
+    "ISBN": "",
+    "publisher": "",
+    "publicationDate": "",
+    "pages": "",
+    "productDimensions": "6.12(w) x 9.25(h) x 1.72(d)"
+  }
+},
+{
+  "title": "",
+  "image": "",
+  "author": "",
+  "tags": {"main": "fiction", "sub": "", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$31.50"
+  },
+  {
+    "option": "paperback",
+    "price": "$26.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$29.25"
+  }],
+  "overview": "",
+  "productDetails": {
+    "ISBN": "",
+    "publisher": "",
+    "publicationDate": "",
+    "pages": "",
+    "productDimensions": "6.12(w) x 9.25(h) x 1.72(d)"
+  }
+},
+{
+  "title": "",
+  "image": "",
+  "author": "",
+  "tags": {"main": "fiction", "sub": "", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$31.50"
+  },
+  {
+    "option": "paperback",
+    "price": "$26.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$29.25"
+  }],
+  "overview": "",
+  "productDetails": {
+    "ISBN": "",
+    "publisher": "",
+    "publicationDate": "",
+    "pages": "",
+    "productDimensions": "6.12(w) x 9.25(h) x 1.72(d)"
+  }
+},
+{
+  "title": "",
+  "image": "",
+  "author": "",
+  "tags": {"main": "fiction", "sub": "", "others": ""},
+  "purchaseOptions": [{
+    "option": "hardcover",
+    "price": "$31.50"
+  },
+  {
+    "option": "paperback",
+    "price": "$26.99"
+  },
+  {
+    "option": "eBook",
+    "price": "$14.99"
+  },
+  {
+    "option": "Audiobook",
+    "price": "$29.25"
+  }],
+  "overview": "",
+  "productDetails": {
+    "ISBN": "",
+    "publisher": "",
+    "publicationDate": "",
+    "pages": "",
+    "productDimensions": "6.12(w) x 9.25(h) x 1.72(d)"
   }
 }]
