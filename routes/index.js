@@ -74,18 +74,28 @@ router.get('/about', function(req, res){
 // Handle POST request to save user data Signin page
 router.post('/', async function(req, res) {
   try {
-    // Create a new user instance
-    const newUser = new User({
-      email: req.body.email,
-      password: req.body.password
-    });
-    await newUser.save();
-    res.redirect('/contact');
+    // Check if user with the provided email already exists
+    const existingUser = await User.findOne({ email: req.body.email });
+    
+    if (existingUser) {
+      // User already exists, perform sign-in action
+      res.redirect('/');
+    } else {
+      // User does not exist, create a new user instance
+      const newUser = new User({
+        email: req.body.email,
+        password: req.body.password
+      });
+      await newUser.save();
+      // Perform sign-in action for the newly created user
+      res.redirect('/');
+    }
   } catch (err) {
-    console.error('Error saving user data:', err);
-    res.status(500).send('Error saving user data');
+    console.error('Error handling user sign-in/sign-up:', err);
+    res.status(500).send('Error handling user sign-in/sign-up');
   }
 });
+
 
 // post record for contactUS
 router.post('/contact', async function(req, res) {
