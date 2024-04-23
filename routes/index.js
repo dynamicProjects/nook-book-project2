@@ -73,11 +73,16 @@ router.get('/', async function(req, res){
   }
 });
 
-router.get('/api/books/:title/:author', function(req, res) {
-  console.log(req.params);
+router.get('/api/books/:title/:author', async function(req, res) {
+  const currentBook = await Books.find({ title: req.params.title, author: req.params.author })
+      .then((book) => {
+        return book;
+      })
+      .catch(() => { 
+        return []; 
+      });
   res.render("book", {
-    title: req.params.title,
-    author: req.params.author
+    bookInfo: currentBook[0]
   });
 });
 

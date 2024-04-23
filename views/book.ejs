@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title><%= title%></title>
+    <title><%= bookInfo.title%></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
     <!-- Bootstrap CSS -->
@@ -15,9 +15,10 @@
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/book.css">
 </head>
 
-<body>
+<body id="page">
     <header>
         <div>
             <nav class="navbar navbar-expand-md navbar-dark">
@@ -95,9 +96,41 @@
         </div>
     </header>
     <main>
-        <h1>Book</h1>
-        <h2><%= title%></h2>
-        <h2><%= author%></h2>
+        <div class="row justify-content-center p-5">
+            <img class="bookCover col-lg-5" src="<%= bookInfo.image%>" alt="<%= bookInfo.title%>">
+            <div class="col-lg-7">
+                <h2><%= bookInfo.title %></h2>
+                <p>by <%= bookInfo.author %></p>
+                <hr>
+                <p class="purchaseOptionTitle"></p>
+                <h1 class="purchaseOptionCost"></h1>
+                <div class="purchaseOptions"></div>
+                <button class="cartOption"></button>
+            </div>
+        </div>
+        <div class="overview pt-3">
+            <h2 class="text-left pb-3">Overview</h2>
+            <p class="card p-4"><%= bookInfo.overview %></p>
+        </div>
+        <div id="ProductDetailsTab">
+            <h2 class="text-center py-3">Product Details</h2>
+            <table class="plain m-auto">
+                <tbody>
+                    <% Object.entries(bookInfo.productDetails).forEach(function(detail) { %>
+                        <% if (detail[0] === "ISBN") { %>
+                            <tr class="text-left">
+                                <th>ISBN-13:</th>
+                                <td class="p-2"><%= detail[1] %></td>
+                            </tr>
+                        <% } else if (detail[1] !== undefined) { %>
+                            <tr class="text-left">
+                                <th><%= (detail[0].charAt(0).toUpperCase() + detail[0].slice(1)).replace(/[A-Z]/g, letter => ` ${letter}`) %>:</th>
+                                <td class="p-2"><%= detail[1] %></td>
+                            </tr>
+                    <% }}); %>
+                </tbody>
+            </table>
+        </div>
     </main>
     <footer class="container-fluid mt-5 py-5">
         <div class="container-xl py-xl-5">
@@ -134,6 +167,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/book.js"></script>
 </body>
 
 </html>
