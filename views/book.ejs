@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>title</title>
+    <title><%= title%></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
     <!-- Bootstrap CSS -->
@@ -14,7 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="/css/common.css">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
                     <div class="d-flex flex-row">
                         <ul class="navbar-nav mt-n2 d-flex flex-row">
                             <li class="nav-item p-md-3 p-2">
-                                <a href="/">NookBook</a>
+                                <a href="/">Home</a>
                             </li>
                             <li class="nav-item p-md-3 p-2">
                                 <a href="/about">About</a>
@@ -46,7 +46,7 @@
                     <div class="d-flex flex-row justify-content-between">
                         <div class="logoSearch">
                             <a class="d-flex flex-row pl-3" href="/">
-                                <img src="../images/booklogo.webp" alt="NookBook">
+                                <img src="/images/booklogo.webp" alt="NookBook">
                             </a>
                         </div>
                         <!-- Hamburger Menu -->
@@ -96,10 +96,12 @@
     </header>
     <main>
         <h1>Book</h1>
+        <h2><%= title%></h2>
+        <h2><%= author%></h2>
     </main>
     <footer class="container-fluid mt-5 py-5">
         <div class="container-xl py-xl-5">
-            <img class="footerLogo pb-4" src="../images/booklogo.webp" alt="NookBook">
+            <img class="footerLogo pb-4" src="/images/booklogo.webp" alt="NookBook">
             <div class="row font-weight-bold">
                 <div class="ml-n3 ml-xl-0 col-xl-6 text-xl-left">
                     <ul>

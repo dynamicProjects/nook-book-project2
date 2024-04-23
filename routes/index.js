@@ -47,43 +47,49 @@ const contactUS = mongoose.model('contactUS', contactSchema);
 router.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded data
 
 // ROUTES
-router.get('/', function(req, res){
-    res.sendFile(path.join(__dirname, '../views/index.html'));
-});
-
-router.get('/book/:title/:author', function(req, res) {
-  res.sendFile(path.join(__dirname, '../views/book.html'));
-});
-
-router.get('/featuredList', async (req, res) => {
-  await FeaturedBooks.find()
-    .then((featuredList) => {
-      res.send(featuredList);
-    })
-    .catch(() => { 
-      res.send('Sorry! Something went wrong.'); 
+router.get('/', async function(req, res){
+  try {
+    const featuredBooks = await FeaturedBooks.find()
+      .then((featuredList) => {
+        return featuredList;
+      })
+      .catch(() => { 
+        return []; 
+      });
+    const allBooks = await Books.find()
+      .then((books) => {
+        return books;
+      })
+      .catch(() => { 
+        return []; 
+      });
+    res.render("index", {
+      books: allBooks,
+      featuredList: featuredBooks
     });
+  } catch (err) {
+    console.error('Error handling home page', err);
+    res.status(500).send('Error getting data from the server');
+  }
 });
 
-router.get('/books', async (req, res) => {
-  await Books.find()
-    .then((books) => {
-      res.send(books);
-    })
-    .catch(() => { 
-      res.send('Sorry! Something went wrong.'); 
-    });
+router.get('/api/books/:title/:author', function(req, res) {
+  console.log(req.params);
+  res.render("book", {
+    title: req.params.title,
+    author: req.params.author
+  });
 });
 
 router.get('/signin', function(req, res){
-    res.sendFile(path.join(__dirname, '../views/signin.html'));
+  res.render("signin");
 });
 
 router.get('/contact', function(req, res){
-    res.sendFile(path.join(__dirname, '../views/contact.html'));
+  res.render("contact");
 });
 router.get('/about', function(req, res){
-    res.sendFile(path.join(__dirname, '../views/about.html'));
+  res.render("about");
 });
 
 // Handle POST request to save user data Signin page
