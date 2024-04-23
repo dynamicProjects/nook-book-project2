@@ -108,9 +108,10 @@
                 <button class="cartOption"></button>
             </div>
         </div>
-        <div class="overview pt-3">
+        <div class="overview py-3 mb-5">
             <h2 class="text-left pb-3">Overview</h2>
-            <p class="card p-4"><%= bookInfo.overview %></p>
+            <p id="overviewText" class="d-none"><%= bookInfo.overview.replace(/\n/g, '<br><br>') %></p>
+            <div id="sample" class="card p-4"></div>
         </div>
         <div id="ProductDetailsTab">
             <h2 class="text-center py-3">Product Details</h2>
