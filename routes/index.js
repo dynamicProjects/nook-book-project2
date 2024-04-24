@@ -11,6 +11,10 @@ const featuredBooksdata = JSON.parse(fs.readFileSync('./featuredBooks.json', 'ut
 
 const router = express.Router();
 
+let username = '';
+let featuredBooks;
+let allBooks;
+
 // Connection to MongoDB
 mongoose.connect('mongodb://localhost:27017/nookbook', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
@@ -49,14 +53,14 @@ router.use(express.urlencoded({ extended: true })); // Middleware to parse URL-e
 // ROUTES
 router.get('/', async function(req, res){
   try {
-    const featuredBooks = await FeaturedBooks.find()
+    featuredBooks = await FeaturedBooks.find()
       .then((featuredList) => {
         return featuredList;
       })
       .catch(() => { 
         return []; 
       });
-    const allBooks = await Books.find()
+    allBooks = await Books.find()
       .then((books) => {
         return books;
       })
@@ -64,6 +68,7 @@ router.get('/', async function(req, res){
         return []; 
       });
     res.render("index", {
+      user: username,
       books: allBooks,
       featuredList: featuredBooks
     });
@@ -82,6 +87,7 @@ router.get('/api/books/:title/:author', async function(req, res) {
         return []; 
       });
   res.render("book", {
+    user: username,
     bookInfo: currentBook[0]
   });
 });
@@ -90,15 +96,25 @@ router.get('/signin', function(req, res){
   res.render("signin");
 });
 
+router.get('/logout', function(req, res){
+  username = '';
+  res.render("index", {
+    user: username,
+    books: allBooks,
+    featuredList: featuredBooks
+  });
+});
+
 router.get('/contact', function(req, res){
-  res.render("contact");
+  res.render("contact", {user: username});
 });
 router.get('/about', function(req, res){
-  res.render("about");
+  res.render("about", {user: username});
 });
 
 // Handle POST request to save user data Signin page
 router.post('/', async function(req, res) {
+  username = req.body.email;
   try {
     // Check if user with the provided email already exists
     const existingUser = await User.findOne({ email: req.body.email });

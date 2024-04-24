@@ -37,7 +37,11 @@
                         </ul>
                         <ul class="navbar-nav mt-n2 d-flex flex-row ml-auto">
                             <li class="nav-item p-md-3 p-2 ml-n3">
-                                <a href="/signin">Sign In</a>
+                                <% if (user === '') { %>
+                                    <a href="/signin">Sign In</a>
+                                <% } else { %>
+                                    <a href="/logout">Logout</a>
+                                <% } %>
                             </li>
                             <li class="nav-item p-md-3 p-2">
                                 <a href="#">Wishlist</a>
@@ -149,7 +153,13 @@
                     <ul>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <li><a href="/signin">Register / Sign in</a></li>
+                        <li>
+                            <% if (user === '') { %>
+                                <a href="/signin">Register / Sign in</a>
+                            <% } else { %>
+                                <a href="/logout">Logout</a>
+                            <% } %>
+                        </li>
                         <li><a>Careers</a></li>
                     </ul>
                 </div>

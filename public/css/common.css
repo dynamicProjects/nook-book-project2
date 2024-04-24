@@ -1,6 +1,6 @@
 /* Navbar*/
 nav {
-    background-color: #1a2e38;
+    background-color: #0f3761;
 }
 
 header {
@@ -47,11 +47,33 @@ nav ul li {
     font-family: "Lato", sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 nav ul li a {
     color: #FFFFFF;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+}
+
+.logoSearch a:hover {
+    text-decoration: none;
+}
+
+.nookTitle {
+    font-size: 36px;
+    margin: 20px 0;
+    background: linear-gradient(120deg, #ff7e5f, #feb47b, #ffea94, #97ff91, #5ebaff, #ff7e5f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0; 
+}
+
+.bookNavBar ul li {
+    font-size: 20px;
 }
 
 /* Footer */
