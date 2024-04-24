@@ -11,6 +11,10 @@ const featuredBooksdata = JSON.parse(fs.readFileSync('./featuredBooks.json', 'ut
 
 const router = express.Router();
 
+let username = '';
+let featuredBooks = null;
+let allBooks = null;
+
 // Connection to MongoDB
 mongoose.connect('mongodb://localhost:27017/nookbook', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
@@ -47,23 +51,29 @@ const contactUS = mongoose.model('contactUS', contactSchema);
 router.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded data
 
 // ROUTES
+//home page
 router.get('/', async function(req, res){
   try {
-    const featuredBooks = await FeaturedBooks.find()
-      .then((featuredList) => {
-        return featuredList;
-      })
-      .catch(() => { 
-        return []; 
-      });
-    const allBooks = await Books.find()
-      .then((books) => {
-        return books;
-      })
-      .catch(() => { 
-        return []; 
-      });
+    if (featuredBooks === null) {
+      featuredBooks = await FeaturedBooks.find()
+        .then((featuredList) => {
+          return featuredList;
+        })
+        .catch(() => { 
+          return []; 
+        });
+    }
+    if (allBooks === null) {
+      allBooks = await Books.find()
+        .then((books) => {
+          return books;
+        })
+        .catch(() => { 
+          return []; 
+        });
+    }
     res.render("index", {
+      user: username,
       books: allBooks,
       featuredList: featuredBooks
     });
@@ -73,32 +83,71 @@ router.get('/', async function(req, res){
   }
 });
 
+//all books page
+router.get('/books', async function(req, res){
+  try {
+    if (allBooks === null) {
+      allBooks = await Books.find()
+        .then((books) => {
+          return books;
+        })
+        .catch(() => { 
+          return []; 
+        });
+    }
+    res.render("books", {
+      user: username,
+      books: allBooks
+    });
+  } catch (err) {
+    console.error('Error handling books page', err);
+    res.status(500).send('Error getting data from the server');
+  }
+});
+
+//individual book info page
 router.get('/api/books/:title/:author', async function(req, res) {
-  const currentBook = await Books.find({ title: req.params.title, author: req.params.author })
-      .then((book) => {
-        return book;
-      })
-      .catch(() => { 
-        return []; 
-      });
-  res.render("book", {
-    bookInfo: currentBook[0]
-  });
+  try {
+    const currentBook = await Books.find({ title: req.params.title, author: req.params.author })
+        .then((book) => {
+          return book;
+        })
+        .catch(() => { 
+          return []; 
+        });
+    res.render("book", {
+      user: username,
+      bookInfo: currentBook[0]
+    });
+  } catch (err) {
+    console.error('Error handling book page', err);
+    res.status(500).send('Error: couldn\'t find the book');
+  }
 });
 
 router.get('/signin', function(req, res){
   res.render("signin");
 });
 
+router.get('/logout', function(req, res){
+  username = '';
+  res.render("index", {
+    user: username,
+    books: allBooks,
+    featuredList: featuredBooks
+  });
+});
+
 router.get('/contact', function(req, res){
-  res.render("contact");
+  res.render("contact", {user: username});
 });
 router.get('/about', function(req, res){
-  res.render("about");
+  res.render("about", {user: username});
 });
 
 // Handle POST request to save user data Signin page
 router.post('/', async function(req, res) {
+  username = req.body.email;
   try {
     // Check if user with the provided email already exists
     const existingUser = await User.findOne({ email: req.body.email });

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title><%= bookInfo.title%></title>
+    <title>All Books</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
     <!-- Bootstrap CSS -->
@@ -15,10 +15,10 @@
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/book.css">
+    <link rel="stylesheet" href="/css/books.css">
 </head>
 
-<body id="page">
+<body id="books">
     <header>
         <div>
             <nav class="navbar navbar-expand-md navbar-dark">
@@ -101,49 +101,73 @@
         </div>
     </header>
     <main>
-        <div class="bookIntroduction row justify-content-center p-5">
-            <img class="bookCover col-lg-5" src="<%= bookInfo.image%>" alt="<%= bookInfo.title%>">
-            <div class="col-lg-7 pl-lg-5 pt-5 pt-lg-0">
-                <h2><%= bookInfo.title %></h2>
-                <p class="pb-3">by <%= bookInfo.author %></p>
-                <hr>
-                <p id="purchaseOptionTitle"></p>
-                <p id="purchaseOptionPrice" class="mt-n4"></p>
-                <div class="purchaseOptions">
-                    <% Object.entries(bookInfo.purchaseOptions).forEach(function(option) { %>
-                        <button type="button" class="purchaseButtons btn btn-light" onclick="changePurchaseOption(this)">
-                            <p class="option"><%= option[1].option %></p>
-                            <p class="price"><%= option[1].price %></p>
-                        </button>
-                    <% }); %>
-                </div>
-                <button id="addToCart" class="btn btn-primary mt-4 p-2">Add to Cart</button>
-                <button id="addToWishlist" class="btn btn-light btn-outline-dark mt-4 ml-4 p-2">Add to Wishlist</button>
+        <div class="booksContainer container-fluid">
+            <h2 class="mt-5 pt-5 pb-3">All Books</h2>
+            <div class="booksList d-flex flex-row overflow-auto">
+                <% books.forEach(function(book) { %>
+                        <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
+                <% }); %>
             </div>
         </div>
-        <div class="overview py-3 mb-5">
-            <h2 class="text-left pb-3">Overview</h2>
-            <p id="overviewText" class="d-none"><%= bookInfo.overview.replace(/\n/g, '<br><br>') %></p>
-            <div id="overviewTextCard" class="card p-4"></div>
+        <div class="booksContainer container-fluid">
+            <h2 class="mt-5 pt-5 pb-3">Fiction</h2>
+            <div class="booksList d-flex flex-row overflow-auto">
+                <% books.forEach(function(book) { %>
+                    <% if (book.tags.main === "fiction") { %>
+                        <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
+                    <% } %>
+                <% }); %>
+            </div>
         </div>
-        <div id="ProductDetailsTab">
-            <h2 class="text-center py-3">Product Details</h2>
-            <table class="plain m-auto">
-                <tbody>
-                    <% Object.entries(bookInfo.productDetails).forEach(function(detail) { %>
-                        <% if (detail[0] === "ISBN") { %>
-                            <tr class="text-left">
-                                <th>ISBN-13:</th>
-                                <td class="p-2"><%= detail[1] %></td>
-                            </tr>
-                        <% } else if (detail[1] !== undefined) { %>
-                            <tr class="text-left">
-                                <th><%= (detail[0].charAt(0).toUpperCase() + detail[0].slice(1)).replace(/[A-Z]/g, letter => ` ${letter}`) %>:</th>
-                                <td class="p-2"><%= detail[1] %></td>
-                            </tr>
-                    <% }}); %>
-                </tbody>
-            </table>
+        <div class="booksContainer container-fluid">
+            <h2 class="mt-5 pt-5 pb-3">Non-Fiction</h2>
+            <div class="booksList d-flex flex-row overflow-auto">
+                <% books.forEach(function(book) { %>
+                    <% if (book.tags.main === "non-fiction") { %>
+                        <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
+                    <% } %>
+                <% }); %>
+            </div>
+        </div>
+        <div class="booksContainer container-fluid">
+            <h2 class="mt-5 pt-5 pb-3">Teens & YA</h2>
+            <div class="booksList d-flex flex-row overflow-auto">
+                <% books.forEach(function(book) { %>
+                    <% if (book.tags.main === "Teens & YA") { %>
+                        <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
+                    <% } %>
+                <% }); %>
+            </div>
+        </div>
+        <div class="booksContainer container-fluid">
+            <h2 class="mt-5 pt-5 pb-3">Kids</h2>
+            <div class="booksList d-flex flex-row overflow-auto">
+                <% books.forEach(function(book) { %>
+                    <% if (book.tags.main === "kids") { %>
+                        <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
+                    <% } %>
+                <% }); %>
+            </div>
+        </div>
+        <div class="booksContainer container-fluid">
+            <h2 class="mt-5 pt-5 pb-3">Biography</h2>
+            <div class="booksList d-flex flex-row overflow-auto">
+                <% books.forEach(function(book) { %>
+                    <% if (book.tags.main === "biography") { %>
+                        <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
+                    <% } %>
+                <% }); %>
+            </div>
+        </div>
+        <div class="booksContainer container-fluid">
+            <h2 class="mt-5 pt-5 pb-3">Classic</h2>
+            <div class="booksList d-flex flex-row overflow-auto">
+                <% books.forEach(function(book) { %>
+                    <% if (book.tags.main === "classic") { %>
+                        <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
+                    <% } %>
+                <% }); %>
+            </div>
         </div>
     </main>
     <footer class="container-fluid mt-5 py-5 bg-light">
@@ -187,7 +211,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="/js/book.js"></script>
+    <script src="/js/common.js"></script>
 </body>
 
 </html>

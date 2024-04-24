@@ -1,44 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - Nook Book</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="../css/about.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-          <img src="../images/booklogo.webp" alt="Nook Book Logo">
+  <header>
+    <div>
+      <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="w-100 d-flex flex-column navTop">
+          <div class="d-flex flex-row">
+            <ul class="navbar-nav mt-n2 d-flex flex-row">
+              <li class="nav-item p-md-3 p-2">
+                <a href="/">Home</a>
+              </li>
+              <li class="nav-item p-md-3 p-2">
+                <a href="/about">About</a>
+              </li>
+              <li class="nav-item p-md-3 p-2">
+                <a href="/contact">Contact</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mt-n2 d-flex flex-row ml-auto">
+              <li class="nav-item p-md-3 p-2 ml-n3">
+                <% if (user==='' ) { %>
+                  <a href="/signin">Sign In</a>
+                <% } else { %>
+                  <a href="/logout">Logout</a>
+                <% } %>
+              </li>
+              <li class="nav-item p-md-3 p-2">
+                <a href="#">Wishlist</a>
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex flex-row justify-content-between">
+            <div class="logoSearch">
+              <a class="d-flex flex-row pl-3" href="/">
+                <img src="/images/booklogo.webp" alt="NookBook">
+                <h2 class="nookTitle pl-3">Nook Book</h2>
+              </a>
+            </div>
+            <!-- Hamburger Menu -->
+            <button id="nav-collapsed-button" class="navbar-toggler border-0" type="button" data-toggle="collapse"
+              data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+
+              <div class="nav-icon">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+              </div>
+            </button>
+          </div>
+          <div class="bookNavBar collapse navbar-collapse hamburgerMenu" id="navbarContent">
+            <ul class="navbar-nav w-100 mt-md-1 mx-xl-3 d-flex justify-content-between">
+              <li class="nav-item p-3 px-xl-2">
+                <a href="/books">Books</a>
+              </li>
+              <li class="nav-item p-3 px-xl-2">
+                <a href="#">Fiction</a>
+              </li>
+              <li class="nav-item p-3 px-xl-2">
+                <a href="#">Nonfiction</a>
+              </li>
+              <li class="nav-item p-3 px-xl-2">
+                <a href="#">Audiobooks</a>
+              </li>
+              <li class="nav-item p-3 px-xl-2">
+                <a href="#">Teens & YA</a>
+              </li>
+              <li class="nav-item p-3 px-xl-2">
+                <a href="#">Kids</a>
+              </li>
+              <li class="nav-item p-3 px-xl-2">
+                <a href="#">Biography</a>
+              </li>
+              <li class="nav-item p-3 px-xl-2">
+                <a href="#">Classic</a>
+              </li>
+            </ul>
+          </div>
+          <div id="modalContainer" class="collapse"></div>
         </div>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="about">About</a></li>
-            <li><a href="contact">Contact</a></li>
-            <li><a href="/">Logout</a></li>
-          </ul>
-        </nav>
-      </header>
+      </nav>
+    </div>
+  </header>
 
   <div class="hero">
     <div class="container">
       <h1>About Nook Book</h1>
-      <p class="about-paragraph">Welcome to Nook Book, your ultimate destination for discovering and exploring your favorite books. Dive into our vast collection of titles, connect with fellow book lovers, and embark on a literary journey like never before.</p>
+      <p class="about-paragraph">Welcome to Nook Book, your ultimate destination for discovering and exploring your
+        favorite books. Dive into our vast collection of titles, connect with fellow book lovers, and embark on a
+        literary journey like never before.</p>
     </div>
   </div>
-  
+
   <div class="mission">
     <div class="container">
       <h2>Our Mission</h2>
-      <p class="about-paragraph">At Nook Book, our mission is to revolutionize the way people experience reading and literature. We are dedicated to promoting literacy and fostering a deep love for books in individuals of all ages and backgrounds. Through our platform, we aim to empower readers to discover, explore, and engage with a diverse range of stories from around the globe.</p>
-      <p class="about-paragraph">We strive to create an inclusive community where book enthusiasts can connect, share their thoughts, and forge meaningful relationships with authors and fellow readers. Our commitment extends beyond merely providing access to books; we aspire to cultivate a vibrant literary ecosystem that inspires curiosity, sparks creativity, and enriches lives.</p>
-      <p class="about-paragraph">With a relentless focus on innovation and user experience, we continuously evolve our platform to deliver seamless access to the world's literature. Whether you're a seasoned bibliophile or just beginning your reading journey, Nook Book is your trusted companion in the world of literature.</p>
+      <p class="about-paragraph">At Nook Book, our mission is to revolutionize the way people experience reading and
+        literature. We are dedicated to promoting literacy and fostering a deep love for books in individuals of all
+        ages and backgrounds. Through our platform, we aim to empower readers to discover, explore, and engage with a
+        diverse range of stories from around the globe.</p>
+      <p class="about-paragraph">We strive to create an inclusive community where book enthusiasts can connect, share
+        their thoughts, and forge meaningful relationships with authors and fellow readers. Our commitment extends
+        beyond merely providing access to books; we aspire to cultivate a vibrant literary ecosystem that inspires
+        curiosity, sparks creativity, and enriches lives.</p>
+      <p class="about-paragraph">With a relentless focus on innovation and user experience, we continuously evolve our
+        platform to deliver seamless access to the world's literature. Whether you're a seasoned bibliophile or just
+        beginning your reading journey, Nook Book is your trusted companion in the world of literature.</p>
     </div>
   </div>
-  
-  
+
+
   <div class="team">
     <div class="container">
       <h2>Meet Our Team</h2>
@@ -56,10 +144,42 @@
       </div>
     </div>
   </div>
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 Nook Book. All rights reserved.</p>
+  <footer class="container-fluid mt-5 py-5 bg-light">
+    <div class="container-xl py-xl-5">
+      <img class="footerLogo pb-4" src="/images/booklogo.webp" alt="NookBook">
+      <div class="row font-weight-bold">
+        <div class="ml-n3 ml-xl-0 col-xl-6 text-xl-left">
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li>
+              <% if (user==='' ) { %>
+                <a href="/signin">Register / Sign in</a>
+                <% } else { %>
+                  <a href="/logout">Logout</a>
+                  <% } %>
+            </li>
+            <li><a>Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-6 text-xl-right pr-xl-5">
+          <a href="#" class="fa-brands fa-linkedin-in rounded-circle"></a>
+          <a href="#" class="fa-brands fa-instagram rounded-circle"></a>
+          <a href="#" class="fa-brands fa-twitter rounded-circle"></a>
+          <a href="#" class="fa-brands fa-yelp rounded-circle"></a>
+          <a href="#" class="fa-brands fa-facebook-f rounded-circle"></a>
+          <a href="#" class="fa-brands fa-youtube rounded-circle"></a>
+        </div>
+      </div>
+      <hr>
+      <div id="footerBottom">
+        <div id="copyright">
+          <p>&copy; 2024 NookBook.</p>
+          <p class="mt-n2">All Rights Reserved</p>
+        </div>
+      </div>
     </div>
   </footer>
 </body>
+
 </html>

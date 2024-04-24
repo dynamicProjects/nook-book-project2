@@ -37,7 +37,11 @@
                         </ul>
                         <ul class="navbar-nav mt-n2 d-flex flex-row ml-auto">
                             <li class="nav-item p-md-3 p-2 ml-n3">
-                                <a href="/signin">Sign In</a>
+                                <% if (user === '') { %>
+                                    <a href="/signin">Sign In</a>
+                                <% } else { %>
+                                    <a href="/logout">Logout</a>
+                                <% } %>
                             </li>
                             <li class="nav-item p-md-3 p-2">
                                 <a href="#">Wishlist</a>
@@ -48,6 +52,7 @@
                         <div class="logoSearch">
                             <a class="d-flex flex-row pl-3" href="/">
                                 <img src="/images/booklogo.webp" alt="NookBook">
+                                <h2 class="nookTitle pl-3">Nook Book</h2>
                             </a>
                         </div>
                         <!-- Hamburger Menu -->
@@ -62,10 +67,10 @@
                             </div>
                         </button>
                     </div>
-                    <div class="collapse navbar-collapse hamburgerMenu" id="navbarContent">
+                    <div class="bookNavBar collapse navbar-collapse hamburgerMenu" id="navbarContent">
                         <ul class="navbar-nav w-100 mt-md-1 mx-xl-3 d-flex justify-content-between">
                             <li class="nav-item p-3 px-xl-2">
-                                <a href="#">Books</a>
+                                <a href="/books">Books</a>
                             </li>
                             <li class="nav-item p-3 px-xl-2">
                                 <a href="#">Fiction</a>
@@ -100,24 +105,22 @@
             <ol class="carousel-indicators">
                 <% for (let i = 0; i < featuredList.length; i++) { %>
                     <% if (i === 0) { %>
-                        <li data-target='#carouselExampleIndicators' data-slide-to='0' class='active'></li>
+                        <li data-target='#carouselExampleIndicators' data-slide-to='<%= i %>' class='active'></li>
                     <% } else { %>
-                    <li data-target='#carouselExampleIndicators' data-slide-to='0'></li>
+                    <li data-target='#carouselExampleIndicators' data-slide-to='<%= i %>'></li>
                 <% }} %>
             </ol>
             <div class="carousel-inner">
-                <ul>
-                    <% for (let i = 0; i < featuredList.length; i++) { %>
-                        <% if (i === 0) { %>
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="<%= featuredList[i].banner%>" onclick="location.href='/api/books/<%= featuredList[i].title%>/<%= featuredList[i].author%>'" alt="slide">
-                            </div>
-                        <% } else { %>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="<%= featuredList[i].banner%>" onclick="location.href='/api/books/<%= featuredList[i].title%>/<%= featuredList[i].author%>'" alt="slide">
-                            </div>
-                    <% }} %>
-                </ul>
+                <% for (let i = 0; i < featuredList.length; i++) { %>
+                    <% if (i === 0) { %>
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="<%= featuredList[i].banner%>" onclick="location.href='/api/books/<%= featuredList[i].title%>/<%= featuredList[i].author%>'" alt="slide">
+                        </div>
+                    <% } else { %>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="<%= featuredList[i].banner%>" onclick="location.href='/api/books/<%= featuredList[i].title%>/<%= featuredList[i].author%>'" alt="slide">
+                        </div>
+                <% }} %>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -153,7 +156,7 @@
             </div>
         </div>
     </main>
-    <footer class="container-fluid mt-5 py-5">
+    <footer class="container-fluid mt-5 py-5 bg-light">
         <div class="container-xl py-xl-5">
             <img class="footerLogo pb-4" src="/images/booklogo.webp" alt="NookBook">
             <div class="row font-weight-bold">
@@ -161,7 +164,13 @@
                     <ul>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <li><a href="/signin">Register / Sign in</a></li>
+                        <li>
+                            <% if (user === '') { %>
+                                <a href="/signin">Register / Sign in</a>
+                            <% } else { %>
+                                <a href="/logout">Logout</a>
+                            <% } %>
+                        </li>
                         <li><a>Careers</a></li>
                     </ul>
                 </div>
