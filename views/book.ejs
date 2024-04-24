@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= bookInfo.title%></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/book.css">
+</head>
+
+<body id="page">
+    <header>
+        <div>
+            <nav class="navbar navbar-expand-md navbar-dark">
+                <div class="w-100 d-flex flex-column navTop">
+                    <div class="d-flex flex-row">
+                        <ul class="navbar-nav mt-n2 d-flex flex-row">
+                            <li class="nav-item p-md-3 p-2">
+                                <a href="/">Home</a>
+                            </li>
+                            <li class="nav-item p-md-3 p-2">
+                                <a href="/about">About</a>
+                            </li>
+                            <li class="nav-item p-md-3 p-2">
+                                <a href="/contact">Contact</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav mt-n2 d-flex flex-row ml-auto">
+                            <li class="nav-item p-md-3 p-2 ml-n3">
+                                <a href="/signin">Sign In</a>
+                            </li>
+                            <li class="nav-item p-md-3 p-2">
+                                <a href="#">Wishlist</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between">
+                        <div class="logoSearch">
+                            <a class="d-flex flex-row pl-3" href="/">
+                                <img src="/images/booklogo.webp" alt="NookBook">
+                            </a>
+                        </div>
+                        <!-- Hamburger Menu -->
+                        <button id="nav-collapsed-button" class="navbar-toggler border-0" type="button"
+                            data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+
+                            <div class="nav-icon">
+                                <span class="bar bar-1"></span>
+                                <span class="bar bar-2"></span>
+                                <span class="bar bar-3"></span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse hamburgerMenu" id="navbarContent">
+                        <ul class="navbar-nav w-100 mt-md-1 mx-xl-3 d-flex justify-content-between">
+                            <li class="nav-item p-3 px-xl-2">
+                                <a href="#">Books</a>
+                            </li>
+                            <li class="nav-item p-3 px-xl-2">
+                                <a href="#">Fiction</a>
+                            </li>
+                            <li class="nav-item p-3 px-xl-2">
+                                <a href="#">Nonfiction</a>
+                            </li>
+                            <li class="nav-item p-3 px-xl-2">
+                                <a href="#">Audiobooks</a>
+                            </li>
+                            <li class="nav-item p-3 px-xl-2">
+                                <a href="#">Teens & YA</a>
+                            </li>
+                            <li class="nav-item p-3 px-xl-2">
+                                <a href="#">Kids</a>
+                            </li>
+                            <li class="nav-item p-3 px-xl-2">
+                                <a href="#">Biography</a>
+                            </li>
+                            <li class="nav-item p-3 px-xl-2">
+                                <a href="#">Classic</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="modalContainer" class="collapse"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="bookIntroduction row justify-content-center p-5">
+            <img class="bookCover col-lg-5" src="<%= bookInfo.image%>" alt="<%= bookInfo.title%>">
+            <div class="col-lg-7 pl-lg-5 pt-5 pt-lg-0">
+                <h2><%= bookInfo.title %></h2>
+                <p class="pb-3">by <%= bookInfo.author %></p>
+                <hr>
+                <p id="purchaseOptionTitle"></p>
+                <p id="purchaseOptionPrice" class="mt-n4"></p>
+                <div class="purchaseOptions">
+                    <% Object.entries(bookInfo.purchaseOptions).forEach(function(option) { %>
+                        <button type="button" class="purchaseButtons btn btn-light" onclick="changePurchaseOption(this)">
+                            <p class="option"><%= option[1].option %></p>
+                            <p class="price"><%= option[1].price %></p>
+                        </button>
+                    <% }); %>
+                </div>
+                <button class="cartOption btn btn-primary mt-4 p-2">Add to Cart</button>
+            </div>
+        </div>
+        <div class="overview py-3 mb-5">
+            <h2 class="text-left pb-3">Overview</h2>
+            <p id="overviewText" class="d-none"><%= bookInfo.overview.replace(/\n/g, '<br><br>') %></p>
+            <div id="overviewTextCard" class="card p-4"></div>
+        </div>
+        <div id="ProductDetailsTab">
+            <h2 class="text-center py-3">Product Details</h2>
+            <table class="plain m-auto">
+                <tbody>
+                    <% Object.entries(bookInfo.productDetails).forEach(function(detail) { %>
+                        <% if (detail[0] === "ISBN") { %>
+                            <tr class="text-left">
+                                <th>ISBN-13:</th>
+                                <td class="p-2"><%= detail[1] %></td>
+                            </tr>
+                        <% } else if (detail[1] !== undefined) { %>
+                            <tr class="text-left">
+                                <th><%= (detail[0].charAt(0).toUpperCase() + detail[0].slice(1)).replace(/[A-Z]/g, letter => ` ${letter}`) %>:</th>
+                                <td class="p-2"><%= detail[1] %></td>
+                            </tr>
+                    <% }}); %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="container-fluid mt-5 py-5">
+        <div class="container-xl py-xl-5">
+            <img class="footerLogo pb-4" src="/images/booklogo.webp" alt="NookBook">
+            <div class="row font-weight-bold">
+                <div class="ml-n3 ml-xl-0 col-xl-6 text-xl-left">
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/signin">Register / Sign in</a></li>
+                        <li><a>Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-6 text-xl-right pr-xl-5">
+                    <a href="#" class="fa-brands fa-linkedin-in rounded-circle"></a>
+                    <a href="#" class="fa-brands fa-instagram rounded-circle"></a>
+                    <a href="#" class="fa-brands fa-twitter rounded-circle"></a>
+                    <a href="#" class="fa-brands fa-yelp rounded-circle"></a>
+                    <a href="#" class="fa-brands fa-facebook-f rounded-circle"></a>
+                    <a href="#" class="fa-brands fa-youtube rounded-circle"></a>
+                </div>
+            </div>
+            <hr>
+            <div id="footerBottom">
+                <div id="copyright">
+                    <p>&copy; 2024 NookBook.</p>
+                    <p class="mt-n2">All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/book.js"></script>
+</body>
+
+</html>

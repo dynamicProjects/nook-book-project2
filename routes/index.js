@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
+const { title } = require('process');
 
 //Read books data
 const booksData = JSON.parse(fs.readFileSync('./books.json', 'utf-8'));
@@ -18,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/nookbook', { useNewUrlParser: true, 
 // Add books collection and data to database
 const Books = mongoose.model('Books');
 booksData.forEach(async function(n) {
-  await Books.findOneAndUpdate( n, n, { new: true, upsert: true });
+  await Books.findOneAndUpdate( {title: n.title, image: n.image, author: n.author}, n, { new: true, upsert: true });
 });
 // Add featured books collection and data to database
 const FeaturedBooks = mongoose.model('FeaturedBooks');
@@ -46,29 +47,54 @@ const contactUS = mongoose.model('contactUS', contactSchema);
 router.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded data
 
 // ROUTES
-router.get('/', function(req, res){
-    res.sendFile(path.join(__dirname, '../views/index.html'));
+router.get('/', async function(req, res){
+  try {
+    const featuredBooks = await FeaturedBooks.find()
+      .then((featuredList) => {
+        return featuredList;
+      })
+      .catch(() => { 
+        return []; 
+      });
+    const allBooks = await Books.find()
+      .then((books) => {
+        return books;
+      })
+      .catch(() => { 
+        return []; 
+      });
+    res.render("index", {
+      books: allBooks,
+      featuredList: featuredBooks
+    });
+  } catch (err) {
+    console.error('Error handling home page', err);
+    res.status(500).send('Error getting data from the server');
+  }
 });
 
-router.get('/featuredList', (req, res) => {
-  FeaturedBooks.find()
-    .then((featuredList) => {
-      res.send(featuredList);
-    })
-    .catch(() => { 
-      res.send('Sorry! Something went wrong.'); 
-    });
+router.get('/api/books/:title/:author', async function(req, res) {
+  const currentBook = await Books.find({ title: req.params.title, author: req.params.author })
+      .then((book) => {
+        return book;
+      })
+      .catch(() => { 
+        return []; 
+      });
+  res.render("book", {
+    bookInfo: currentBook[0]
+  });
 });
 
 router.get('/signin', function(req, res){
-    res.sendFile(path.join(__dirname, '../views/signin.html'));
+  res.render("signin");
 });
 
 router.get('/contact', function(req, res){
-    res.sendFile(path.join(__dirname, '../views/contact.html'));
+  res.render("contact");
 });
 router.get('/about', function(req, res){
-    res.sendFile(path.join(__dirname, '../views/about.html'));
+  res.render("about");
 });
 
 // Handle POST request to save user data Signin page

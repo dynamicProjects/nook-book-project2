@@ -54,27 +54,8 @@ nav ul li a {
     color: #FFFFFF;
 }
 
-/* @media only screen and (max-width: 767px) {
-    header {
-        position: sticky;
-        z-index: 100;
-        top: 0;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    header {
-        position: fixed;
-        z-index: 100;
-        width: 100%;
-    }
-} */
-
 /* Footer */
 footer {
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
     text-align: center;
 }
 
@@ -125,6 +106,10 @@ footer ul li {
     font-family: 'Open Sans Bold';
 }
 
+footer ul li a {
+    color: #000;
+}
+
 footer hr {
     width: 100%;
     height: 1px;
@@ -132,45 +117,28 @@ footer hr {
     border: none
 }
 
+#footerBottom {
+    padding: 1em 0;
+}
+
 @media only screen and (max-width: 576px) {
     footer .footerLogo {
-        width: 60%;
-    }
-
-    #footerBottom {
-        padding: 1em 0;
-    }
-
-    #footerBottom #copyright {
-        padding-top: 2em;
+        width: 100px;
     }
 }
 
 @media only screen and (min-width: 577px) {
     footer .footerLogo {
-        width: 325px;
-    }
-
-    #footerBottom {
-        padding: 1em 0;
-        padding-bottom: 7em;
-    }
-
-    #footerBottom #copyright {
-        float: right;
+        width: 150px;
     }
 }
 
 @media only screen and (min-width: 1200px) {
     footer .footerLogo {
-        width: 25%;
+        width: 15%;
     }
 
     footer hr {
         width: 85%;
-    }
-
-    #footerBottom {
-        padding: 1em 3.5em;
     }
 }
