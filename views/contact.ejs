@@ -127,8 +127,41 @@
       <img src="../images/contactus.jpg" alt="Big Image">
     </div>
   </div>
-  <footer>
-    <p>&copy; 2024 Nook Book. All rights reserved.</p>
+  <footer class="container-fluid mt-5 py-5 bg-light">
+    <div class="container-xl py-xl-5">
+      <img class="footerLogo pb-4" src="/images/booklogo.webp" alt="NookBook">
+      <div class="row font-weight-bold">
+        <div class="ml-n3 ml-xl-0 col-xl-6 text-xl-left">
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li>
+              <% if (user==='' ) { %>
+                <a href="/signin">Register / Sign in</a>
+                <% } else { %>
+                  <a href="/logout">Logout</a>
+                  <% } %>
+            </li>
+            <li><a>Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-6 text-xl-right pr-xl-5">
+          <a href="#" class="fa-brands fa-linkedin-in rounded-circle"></a>
+          <a href="#" class="fa-brands fa-instagram rounded-circle"></a>
+          <a href="#" class="fa-brands fa-twitter rounded-circle"></a>
+          <a href="#" class="fa-brands fa-yelp rounded-circle"></a>
+          <a href="#" class="fa-brands fa-facebook-f rounded-circle"></a>
+          <a href="#" class="fa-brands fa-youtube rounded-circle"></a>
+        </div>
+      </div>
+      <hr>
+      <div id="footerBottom">
+        <div id="copyright">
+          <p>&copy; 2024 NookBook.</p>
+          <p class="mt-n2">All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 
