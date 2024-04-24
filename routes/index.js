@@ -12,8 +12,8 @@ const featuredBooksdata = JSON.parse(fs.readFileSync('./featuredBooks.json', 'ut
 const router = express.Router();
 
 let username = '';
-let featuredBooks;
-let allBooks;
+let featuredBooks = null;
+let allBooks = null;
 
 // Connection to MongoDB
 mongoose.connect('mongodb://localhost:27017/nookbook', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -51,22 +51,27 @@ const contactUS = mongoose.model('contactUS', contactSchema);
 router.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded data
 
 // ROUTES
+//home page
 router.get('/', async function(req, res){
   try {
-    featuredBooks = await FeaturedBooks.find()
-      .then((featuredList) => {
-        return featuredList;
-      })
-      .catch(() => { 
-        return []; 
-      });
-    allBooks = await Books.find()
-      .then((books) => {
-        return books;
-      })
-      .catch(() => { 
-        return []; 
-      });
+    if (featuredBooks === null) {
+      featuredBooks = await FeaturedBooks.find()
+        .then((featuredList) => {
+          return featuredList;
+        })
+        .catch(() => { 
+          return []; 
+        });
+    }
+    if (allBooks === null) {
+      allBooks = await Books.find()
+        .then((books) => {
+          return books;
+        })
+        .catch(() => { 
+          return []; 
+        });
+    }
     res.render("index", {
       user: username,
       books: allBooks,
@@ -78,18 +83,46 @@ router.get('/', async function(req, res){
   }
 });
 
+//all books page
+router.get('/books', async function(req, res){
+  try {
+    if (allBooks === null) {
+      allBooks = await Books.find()
+        .then((books) => {
+          return books;
+        })
+        .catch(() => { 
+          return []; 
+        });
+    }
+    res.render("books", {
+      user: username,
+      books: allBooks
+    });
+  } catch (err) {
+    console.error('Error handling books page', err);
+    res.status(500).send('Error getting data from the server');
+  }
+});
+
+//individual book info page
 router.get('/api/books/:title/:author', async function(req, res) {
-  const currentBook = await Books.find({ title: req.params.title, author: req.params.author })
-      .then((book) => {
-        return book;
-      })
-      .catch(() => { 
-        return []; 
-      });
-  res.render("book", {
-    user: username,
-    bookInfo: currentBook[0]
-  });
+  try {
+    const currentBook = await Books.find({ title: req.params.title, author: req.params.author })
+        .then((book) => {
+          return book;
+        })
+        .catch(() => { 
+          return []; 
+        });
+    res.render("book", {
+      user: username,
+      bookInfo: currentBook[0]
+    });
+  } catch (err) {
+    console.error('Error handling book page', err);
+    res.status(500).send('Error: couldn\'t find the book');
+  }
 });
 
 router.get('/signin', function(req, res){

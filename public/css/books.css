@@ -1,0 +1,38 @@
+/* Body */
+#books {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.booksContainer {
+    width: 80%;
+}
+
+.booksContainer h2 {
+    width: 80%;
+    font-family: Poynter,Georgia,serif;
+    font-style: italic;
+}
+
+.booksList img {
+    padding: 0.5em;
+}
+
+@media only screen and (max-width: 575px) {
+    .booksList {
+        height: 180px;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .booksList {
+        height: 230px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .booksList {
+        height: 350px;
+    }
+}
