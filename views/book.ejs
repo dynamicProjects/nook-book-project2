@@ -96,22 +96,29 @@
         </div>
     </header>
     <main>
-        <div class="row justify-content-center p-5">
+        <div class="bookIntroduction row justify-content-center p-5">
             <img class="bookCover col-lg-5" src="<%= bookInfo.image%>" alt="<%= bookInfo.title%>">
-            <div class="col-lg-7">
+            <div class="col-lg-7 pl-lg-5 pt-5 pt-lg-0">
                 <h2><%= bookInfo.title %></h2>
-                <p>by <%= bookInfo.author %></p>
+                <p class="pb-3">by <%= bookInfo.author %></p>
                 <hr>
-                <p class="purchaseOptionTitle"></p>
-                <h1 class="purchaseOptionCost"></h1>
-                <div class="purchaseOptions"></div>
+                <p id="purchaseOptionTitle"></p>
+                <p id="purchaseOptionPrice" class="mt-n4"></p>
+                <div class="purchaseOptions">
+                    <% Object.entries(bookInfo.purchaseOptions).forEach(function(option) { %>
+                        <button type="button" class="purchaseButtons btn btn-light" onclick="changePurchaseOption(this)">
+                            <p class="option"><%= option[1].option %></p>
+                            <p class="price"><%= option[1].price %></p>
+                        </button>
+                    <% }); %>
+                </div>
                 <button class="cartOption"></button>
             </div>
         </div>
         <div class="overview py-3 mb-5">
             <h2 class="text-left pb-3">Overview</h2>
             <p id="overviewText" class="d-none"><%= bookInfo.overview.replace(/\n/g, '<br><br>') %></p>
-            <div id="sample" class="card p-4"></div>
+            <div id="overviewTextCard" class="card p-4"></div>
         </div>
         <div id="ProductDetailsTab">
             <h2 class="text-center py-3">Product Details</h2>
