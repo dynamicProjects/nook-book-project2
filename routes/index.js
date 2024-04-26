@@ -238,6 +238,45 @@ router.post('/addRemoveWishlist', async function(req, res) {
   }
 });
 
+// Handle POST request to search for a book or an author
+router.post('/search', async function(req, res) {
+  try {
+    let searchKeyword = req.body.search;
+    let regex = new RegExp(searchKeyword, 'gi');
+    let findResult = null;
+    if (req.body.select === 'Author') {
+      // Check if search word in authors of all books
+      findResult = await Books.find({author: regex})
+      .then((book) => {
+        return book;
+      })
+      .catch(() => { 
+        return []; 
+      });
+    } else {
+      // Check if search word in titles of all books
+      findResult = await Books.find({title: regex})
+      .then((book) => {
+        return book;
+      })
+      .catch(() => { 
+        return []; 
+      });
+    }
+
+    if (findResult !== null) {
+      res.render("searchResults", {
+        user: username,
+        books: allBooks,
+        wishlist: wishlist,
+        searchResults: findResult
+      });
+    }
+  } catch (err) {
+    console.error('Error handling search', err);
+    res.status(500).send('Error: cannot find search results');
+  }
+});
 
 // post record for contactUS
 router.post('/contact', async function(req, res) {

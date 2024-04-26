@@ -1,78 +1,88 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-dark">
-  <div class="w-100 d-flex flex-column navTop">
-      <div class="d-flex flex-row">
-          <ul class="navbar-nav mt-n2 d-flex flex-row">
-              <li class="nav-item p-md-3 p-2">
-                  <a href="/">Home</a>
-              </li>
-              <li class="nav-item p-md-3 p-2">
-                  <a href="/about">About</a>
-              </li>
-              <li class="nav-item p-md-3 p-2">
-                  <a href="/contact">Contact</a>
-              </li>
-          </ul>
-          <ul class="navbar-nav mt-n2 d-flex flex-row ml-auto">
-              <li class="nav-item p-md-3 p-2 ml-n3">
-                  <% if (user === '') { %>
-                      <a href="/signin">Sign In</a>
-                  <% } else { %>
-                      <a href="/logout">Logout</a>
-                  <% } %>
-              </li>
-              <li class="nav-item p-md-3 p-2">
-                  <a href="#" data-toggle="modal" data-target="#exampleModal"> Wishlist</a>
-              </li>
-          </ul>
-      </div>
-      <div class="d-flex flex-row justify-content-between">
-          <div class="logoSearch">
-              <a class="d-flex flex-row pl-3" href="/">
-                  <img src="/images/booklogo.webp" alt="NookBook">
-                  <h2 class="nookTitle pl-3">Nook Book</h2>
-              </a>
-          </div>
-          <!-- Hamburger Menu -->
-          <button id="nav-collapsed-button" class="navbar-toggler border-0" type="button"
-              data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent"
-              aria-expanded="false" aria-label="Toggle navigation">
+    <div class="w-100 d-flex flex-column navTop">
+        <div class="d-flex flex-row">
+            <ul class="navbar-nav mt-n2 d-flex flex-row">
+                <li class="nav-item p-md-3 p-2">
+                    <a href="/">Home</a>
+                </li>
+                <li class="nav-item p-md-3 p-2">
+                    <a href="/about">About</a>
+                </li>
+                <li class="nav-item p-md-3 p-2">
+                    <a href="/contact">Contact</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav mt-n2 d-flex flex-row ml-auto">
+                <li class="nav-item p-md-3 p-2 ml-n3">
+                    <% if (user==='' ) { %>
+                        <a href="/signin">Sign In</a>
+                        <% } else { %>
+                            <a href="/logout">Logout</a>
+                            <% } %>
+                </li>
+                <li class="nav-item p-md-3 p-2">
+                    <a href="#" data-toggle="modal" data-target="#exampleModal"> Wishlist</a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-flex flex-row justify-content-between">
+            <div class="logoSearch row container">
+                <a class="d-flex flex-row pl-3 col-12 col-md-5" href="/">
+                    <img src="/images/booklogo.webp" alt="NookBook">
+                    <h2 class="nookTitle pl-3">Nook Book</h2>
+                </a>
+                <div class="search-container w-100 col-12 col-md-7 p-3 text-center">
+                    <form id="search" method="POST" action="/search">
+                        <select class="form-select" aria-label="Default select example" name="select">
+                            <option value="Title">Title</option>
+                            <option value="Author">Author</option>
+                          </select>
+                        <input class="w-50" type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <!-- Hamburger Menu -->
+            <button id="nav-collapsed-button" class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                aria-label="Toggle navigation">
 
-              <div class="nav-icon">
-                  <span class="bar bar-1"></span>
-                  <span class="bar bar-2"></span>
-                  <span class="bar bar-3"></span>
-              </div>
-          </button>
-      </div>
-      <div class="bookNavBar collapse navbar-collapse hamburgerMenu" id="navbarContent">
-          <ul class="navbar-nav w-100 mt-md-1 mx-xl-3 d-flex justify-content-between">
-              <li class="nav-item p-3 px-xl-2">
-                  <a href="/books">Books</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                  <a href="#">Fiction</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                  <a href="#">Nonfiction</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                  <a href="#">Audiobooks</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                  <a href="#">Teens & YA</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                  <a href="#">Kids</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                  <a href="#">Biography</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                  <a href="#">Classic</a>
-              </li>
-          </ul>
-      </div>
-      <div id="modalContainer" class="collapse"></div>
-  </div>
+                <div class="nav-icon">
+                    <span class="bar bar-1"></span>
+                    <span class="bar bar-2"></span>
+                    <span class="bar bar-3"></span>
+                </div>
+            </button>
+        </div>
+        <div class="bookNavBar collapse navbar-collapse hamburgerMenu" id="navbarContent">
+            <ul class="navbar-nav w-100 mt-md-1 mx-xl-3 d-flex justify-content-between">
+                <li class="nav-item p-3 px-xl-2">
+                    <a href="/books">Books</a>
+                </li>
+                <li class="nav-item p-3 px-xl-2">
+                    <a href="#">Fiction</a>
+                </li>
+                <li class="nav-item p-3 px-xl-2">
+                    <a href="#">Nonfiction</a>
+                </li>
+                <li class="nav-item p-3 px-xl-2">
+                    <a href="#">Audiobooks</a>
+                </li>
+                <li class="nav-item p-3 px-xl-2">
+                    <a href="#">Teens & YA</a>
+                </li>
+                <li class="nav-item p-3 px-xl-2">
+                    <a href="#">Kids</a>
+                </li>
+                <li class="nav-item p-3 px-xl-2">
+                    <a href="#">Biography</a>
+                </li>
+                <li class="nav-item p-3 px-xl-2">
+                    <a href="#">Classic</a>
+                </li>
+            </ul>
+        </div>
+        <div id="modalContainer" class="collapse"></div>
+    </div>
 </nav>
