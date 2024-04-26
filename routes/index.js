@@ -14,6 +14,7 @@ const router = express.Router();
 let username = '';
 let featuredBooks = null;
 let allBooks = null;
+let wishlist = null;
 
 // Connection to MongoDB
 mongoose.connect('mongodb://localhost:27017/nookbook', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -30,6 +31,8 @@ const FeaturedBooks = mongoose.model('FeaturedBooks');
 featuredBooksdata.forEach(async function(n) {
   await FeaturedBooks.findOneAndUpdate( n, n, { new: true, upsert: true });
 });
+//wishlist schema
+const Wishlist = mongoose.model('wishlist');
 
 // LOgin page Schema
 const userSchema = new mongoose.Schema({
@@ -72,10 +75,12 @@ router.get('/', async function(req, res){
           return []; 
         });
     }
+    wishlist = await Wishlist.findOne({ username: username });
     res.render("index", {
       user: username,
       books: allBooks,
-      featuredList: featuredBooks
+      featuredList: featuredBooks,
+      wishlist: wishlist
     });
   } catch (err) {
     console.error('Error handling home page', err);
@@ -97,7 +102,32 @@ router.get('/books', async function(req, res){
     }
     res.render("books", {
       user: username,
-      books: allBooks
+      books: allBooks,
+      wishlist: wishlist
+    });
+  } catch (err) {
+    console.error('Error handling books page', err);
+    res.status(500).send('Error getting data from the server');
+  }
+});
+
+//fiction page
+router.get('/api/books/:category', async function(req, res){
+  try {
+    if (allBooks === null) {
+      allBooks = await Books.find()
+        .then((books) => {
+          return books;
+        })
+        .catch(() => { 
+          return []; 
+        });
+    }
+    res.render("category", {
+      user: username,
+      books: allBooks,
+      wishlist: wishlist,
+      category: req.params.category
     });
   } catch (err) {
     console.error('Error handling books page', err);
@@ -115,9 +145,18 @@ router.get('/api/books/:title/:author', async function(req, res) {
         .catch(() => { 
           return []; 
         });
+    const currentUserWishlist = await Wishlist.find({ username: username, "wishlistBooks.title": req.params.title, "wishlistBooks.author": req.params.author })
+        .then((wishlist) => {
+          return wishlist;
+        })
+        .catch(() => { 
+          return []; 
+        });
     res.render("book", {
       user: username,
-      bookInfo: currentBook[0]
+      bookInfo: currentBook[0],
+      wishlistedCurrentBook: currentUserWishlist[0],
+      wishlist: wishlist
     });
   } catch (err) {
     console.error('Error handling book page', err);
@@ -134,15 +173,16 @@ router.get('/logout', function(req, res){
   res.render("index", {
     user: username,
     books: allBooks,
-    featuredList: featuredBooks
+    featuredList: featuredBooks,
+    wishlist: wishlist
   });
 });
 
 router.get('/contact', function(req, res){
-  res.render("contact", {user: username});
+  res.render("contact", {user: username, wishlist: wishlist});
 });
 router.get('/about', function(req, res){
-  res.render("about", {user: username});
+  res.render("about", {user: username, wishlist: wishlist});
 });
 
 // Handle POST request to save user data Signin page
@@ -171,6 +211,96 @@ router.post('/', async function(req, res) {
   }
 });
 
+// Handle POST request to add book to a wishlist
+router.post('/addRemoveWishlist', async function(req, res) {
+  try {
+    // Check if user has signed in
+    if (username !== '') {
+      // Check if user already has a wishlist
+      wishlist = await Wishlist.findOne({ username: username });
+      
+      if (wishlist) {
+        // User already exists, check if book already added
+        const bookExists = await Wishlist.findOne({ username: username, "wishlistBooks.title": req.body.title });
+        if (bookExists) {
+          //remove from wishlist
+          await Wishlist.updateOne({username: username}, { $pull: {wishlistBooks: {
+            title: req.body.title,
+            author: req.body.author,
+          }}});
+          wishlist = await Wishlist.findOne({ username: username });
+        } else {
+          // add to wishlist
+          await Wishlist.updateOne({username: username}, { $push: {wishlistBooks: {
+            title: req.body.title,
+            author: req.body.author,
+            image: req.body.image,
+          }}});
+          wishlist = await Wishlist.findOne({ username: username });
+        }
+        res.redirect('/');
+      } else {
+        // User does not exist, add new wishlist
+        const wishlist = new Wishlist({
+          username: username,
+          wishlistBooks: {
+            title: req.body.title,
+            author: req.body.author,
+            image: req.body.image
+          }
+        });
+        await wishlist.save();
+        res.redirect('/');
+      }
+    } else {
+      // User not signed in. Redirect to signin page
+      res.redirect('/signin');
+    }
+  } catch (err) {
+    console.error('Error handling wishlist addition', err);
+    res.status(500).send('Error: cannot add to the wishlist');
+  }
+});
+
+// Handle POST request to search for a book or an author
+router.post('/search', async function(req, res) {
+  try {
+    let searchKeyword = req.body.search;
+    let regex = new RegExp(searchKeyword, 'gi');
+    let findResult = null;
+    if (req.body.select === 'Author') {
+      // Check if search word in authors of all books
+      findResult = await Books.find({author: regex})
+      .then((book) => {
+        return book;
+      })
+      .catch(() => { 
+        return []; 
+      });
+    } else {
+      // Check if search word in titles of all books
+      findResult = await Books.find({title: regex})
+      .then((book) => {
+        return book;
+      })
+      .catch(() => { 
+        return []; 
+      });
+    }
+
+    if (findResult !== null) {
+      res.render("searchResults", {
+        user: username,
+        books: allBooks,
+        wishlist: wishlist,
+        searchResults: findResult
+      });
+    }
+  } catch (err) {
+    console.error('Error handling search', err);
+    res.status(500).send('Error: cannot find search results');
+  }
+});
 
 // post record for contactUS
 router.post('/contact', async function(req, res) {
