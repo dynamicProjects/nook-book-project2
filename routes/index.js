@@ -111,6 +111,30 @@ router.get('/books', async function(req, res){
   }
 });
 
+//fiction page
+router.get('/api/books/:category', async function(req, res){
+  try {
+    if (allBooks === null) {
+      allBooks = await Books.find()
+        .then((books) => {
+          return books;
+        })
+        .catch(() => { 
+          return []; 
+        });
+    }
+    res.render("category", {
+      user: username,
+      books: allBooks,
+      wishlist: wishlist,
+      category: req.params.category
+    });
+  } catch (err) {
+    console.error('Error handling books page', err);
+    res.status(500).send('Error getting data from the server');
+  }
+});
+
 //individual book info page
 router.get('/api/books/:title/:author', async function(req, res) {
   try {
