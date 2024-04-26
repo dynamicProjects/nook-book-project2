@@ -14,6 +14,7 @@ const router = express.Router();
 let username = '';
 let featuredBooks = null;
 let allBooks = null;
+let wishlist = null;
 
 // Connection to MongoDB
 mongoose.connect('mongodb://localhost:27017/nookbook', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -74,10 +75,12 @@ router.get('/', async function(req, res){
           return []; 
         });
     }
+    wishlist = await Wishlist.findOne({ username: username });
     res.render("index", {
       user: username,
       books: allBooks,
-      featuredList: featuredBooks
+      featuredList: featuredBooks,
+      wishlist: wishlist
     });
   } catch (err) {
     console.error('Error handling home page', err);
@@ -99,7 +102,8 @@ router.get('/books', async function(req, res){
     }
     res.render("books", {
       user: username,
-      books: allBooks
+      books: allBooks,
+      wishlist: wishlist
     });
   } catch (err) {
     console.error('Error handling books page', err);
@@ -127,7 +131,8 @@ router.get('/api/books/:title/:author', async function(req, res) {
     res.render("book", {
       user: username,
       bookInfo: currentBook[0],
-      wishlist: currentUserWishlist[0],
+      wishlistedCurrentBook: currentUserWishlist[0],
+      wishlist: wishlist
     });
   } catch (err) {
     console.error('Error handling book page', err);
@@ -144,15 +149,16 @@ router.get('/logout', function(req, res){
   res.render("index", {
     user: username,
     books: allBooks,
-    featuredList: featuredBooks
+    featuredList: featuredBooks,
+    wishlist: wishlist
   });
 });
 
 router.get('/contact', function(req, res){
-  res.render("contact", {user: username});
+  res.render("contact", {user: username, wishlist: wishlist});
 });
 router.get('/about', function(req, res){
-  res.render("about", {user: username});
+  res.render("about", {user: username, wishlist: wishlist});
 });
 
 // Handle POST request to save user data Signin page
@@ -187,9 +193,9 @@ router.post('/addRemoveWishlist', async function(req, res) {
     // Check if user has signed in
     if (username !== '') {
       // Check if user already has a wishlist
-      const userWishlistExists = await Wishlist.findOne({ username: username });
+      wishlist = await Wishlist.findOne({ username: username });
       
-      if (userWishlistExists) {
+      if (wishlist) {
         // User already exists, check if book already added
         const bookExists = await Wishlist.findOne({ username: username, "wishlistBooks.title": req.body.title });
         if (bookExists) {
@@ -197,14 +203,16 @@ router.post('/addRemoveWishlist', async function(req, res) {
           await Wishlist.updateOne({username: username}, { $pull: {wishlistBooks: {
             title: req.body.title,
             author: req.body.author,
-          }}})
+          }}});
+          wishlist = await Wishlist.findOne({ username: username });
         } else {
           // add to wishlist
           await Wishlist.updateOne({username: username}, { $push: {wishlistBooks: {
             title: req.body.title,
             author: req.body.author,
             image: req.body.image,
-          }}})
+          }}});
+          wishlist = await Wishlist.findOne({ username: username });
         }
         res.redirect('/');
       } else {

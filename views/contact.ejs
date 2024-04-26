@@ -20,85 +20,10 @@
 <body>
   <header>
     <div>
-      <nav class="navbar navbar-expand-md navbar-dark">
-        <div class="w-100 d-flex flex-column navTop">
-          <div class="d-flex flex-row">
-            <ul class="navbar-nav mt-n2 d-flex flex-row">
-              <li class="nav-item p-md-3 p-2">
-                <a href="/">Home</a>
-              </li>
-              <li class="nav-item p-md-3 p-2">
-                <a href="/about">About</a>
-              </li>
-              <li class="nav-item p-md-3 p-2">
-                <a href="/contact">Contact</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav mt-n2 d-flex flex-row ml-auto">
-              <li class="nav-item p-md-3 p-2 ml-n3">
-                <% if (user==='' ) { %>
-                  <a href="/signin">Sign In</a>
-                <% } else { %>
-                  <a href="/logout">Logout</a>
-                <% } %>
-              </li>
-              <li class="nav-item p-md-3 p-2">
-                <a href="#">Wishlist</a>
-              </li>
-            </ul>
-          </div>
-          <div class="d-flex flex-row justify-content-between">
-            <div class="logoSearch">
-              <a class="d-flex flex-row pl-3" href="/">
-                <img src="/images/booklogo.webp" alt="NookBook">
-                <h2 class="nookTitle pl-3">Nook Book</h2>
-              </a>
-            </div>
-            <!-- Hamburger Menu -->
-            <button id="nav-collapsed-button" class="navbar-toggler border-0" type="button" data-toggle="collapse"
-              data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-
-              <div class="nav-icon">
-                <span class="bar bar-1"></span>
-                <span class="bar bar-2"></span>
-                <span class="bar bar-3"></span>
-              </div>
-            </button>
-          </div>
-          <div class="bookNavBar collapse navbar-collapse hamburgerMenu" id="navbarContent">
-            <ul class="navbar-nav w-100 mt-md-1 mx-xl-3 d-flex justify-content-between">
-              <li class="nav-item p-3 px-xl-2">
-                <a href="/books">Books</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                <a href="#">Fiction</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                <a href="#">Nonfiction</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                <a href="#">Audiobooks</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                <a href="#">Teens & YA</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                <a href="#">Kids</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                <a href="#">Biography</a>
-              </li>
-              <li class="nav-item p-3 px-xl-2">
-                <a href="#">Classic</a>
-              </li>
-            </ul>
-          </div>
-          <div id="modalContainer" class="collapse"></div>
-        </div>
-      </nav>
+        <%- include('navbar') -%>
     </div>
   </header>
+  <%- include('wishlistModal') -%>
   <div class="container">
     <div class="form-container">
       <h1>Contact Us</h1>
@@ -127,42 +52,12 @@
       <img src="../images/contactus.jpg" alt="Big Image">
     </div>
   </div>
-  <footer class="container-fluid mt-5 py-5 bg-light">
-    <div class="container-xl py-xl-5">
-      <img class="footerLogo pb-4" src="/images/booklogo.webp" alt="NookBook">
-      <div class="row font-weight-bold">
-        <div class="ml-n3 ml-xl-0 col-xl-6 text-xl-left">
-          <ul>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li>
-              <% if (user==='' ) { %>
-                <a href="/signin">Register / Sign in</a>
-                <% } else { %>
-                  <a href="/logout">Logout</a>
-                  <% } %>
-            </li>
-            <li><a>Careers</a></li>
-          </ul>
-        </div>
-        <div class="col-xl-6 text-xl-right pr-xl-5">
-          <a href="#" class="fa-brands fa-linkedin-in rounded-circle"></a>
-          <a href="#" class="fa-brands fa-instagram rounded-circle"></a>
-          <a href="#" class="fa-brands fa-twitter rounded-circle"></a>
-          <a href="#" class="fa-brands fa-yelp rounded-circle"></a>
-          <a href="#" class="fa-brands fa-facebook-f rounded-circle"></a>
-          <a href="#" class="fa-brands fa-youtube rounded-circle"></a>
-        </div>
-      </div>
-      <hr>
-      <div id="footerBottom">
-        <div id="copyright">
-          <p>&copy; 2024 NookBook.</p>
-          <p class="mt-n2">All Rights Reserved</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <%- include('footer') -%>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/common.js"></script>
 </body>
 
 </html>

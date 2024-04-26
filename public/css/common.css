@@ -76,6 +76,16 @@ nav ul li a:hover {
     font-size: 20px;
 }
 
+/* Wishlist modal */
+.modal-body{
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-body img{
+    padding: 0.5em;
+}
+
 /* Footer */
 footer {
     text-align: center;
