@@ -30,6 +30,8 @@ const FeaturedBooks = mongoose.model('FeaturedBooks');
 featuredBooksdata.forEach(async function(n) {
   await FeaturedBooks.findOneAndUpdate( n, n, { new: true, upsert: true });
 });
+//wishlist schema
+const Wishlist = mongoose.model('wishlist');
 
 // LOgin page Schema
 const userSchema = new mongoose.Schema({
@@ -115,9 +117,17 @@ router.get('/api/books/:title/:author', async function(req, res) {
         .catch(() => { 
           return []; 
         });
+    const currentUserWishlist = await Wishlist.find({ username: username, "wishlistBooks.title": req.params.title, "wishlistBooks.author": req.params.author })
+        .then((wishlist) => {
+          return wishlist;
+        })
+        .catch(() => { 
+          return []; 
+        });
     res.render("book", {
       user: username,
-      bookInfo: currentBook[0]
+      bookInfo: currentBook[0],
+      wishlist: currentUserWishlist[0],
     });
   } catch (err) {
     console.error('Error handling book page', err);
@@ -168,6 +178,55 @@ router.post('/', async function(req, res) {
   } catch (err) {
     console.error('Error handling user sign-in/sign-up:', err);
     res.status(500).send('Error handling user sign-in/sign-up');
+  }
+});
+
+// Handle POST request to add book to a wishlist
+router.post('/addRemoveWishlist', async function(req, res) {
+  try {
+    // Check if user has signed in
+    if (username !== '') {
+      // Check if user already has a wishlist
+      const userWishlistExists = await Wishlist.findOne({ username: username });
+      
+      if (userWishlistExists) {
+        // User already exists, check if book already added
+        const bookExists = await Wishlist.findOne({ username: username, "wishlistBooks.title": req.body.title });
+        if (bookExists) {
+          //remove from wishlist
+          await Wishlist.updateOne({username: username}, { $pull: {wishlistBooks: {
+            title: req.body.title,
+            author: req.body.author,
+          }}})
+        } else {
+          // add to wishlist
+          await Wishlist.updateOne({username: username}, { $push: {wishlistBooks: {
+            title: req.body.title,
+            author: req.body.author,
+            image: req.body.image,
+          }}})
+        }
+        res.redirect('/');
+      } else {
+        // User does not exist, add new wishlist
+        const wishlist = new Wishlist({
+          username: username,
+          wishlistBooks: {
+            title: req.body.title,
+            author: req.body.author,
+            image: req.body.image
+          }
+        });
+        await wishlist.save();
+        res.redirect('/');
+      }
+    } else {
+      // User not signed in. Redirect to signin page
+      res.redirect('/signin');
+    }
+  } catch (err) {
+    console.error('Error handling wishlist addition', err);
+    res.status(500).send('Error: cannot add to the wishlist');
   }
 });
 

@@ -117,8 +117,19 @@
                         </button>
                     <% }); %>
                 </div>
+                <form id="wishlistForm" method="POST" action="/addRemoveWishlist">
+                    <input type="hidden" name="title" value="<%= bookInfo.title %>">
+                    <input type="hidden" name="author" value="<%= bookInfo.author %>">
+                    <input type="hidden" name="image" value="<%= bookInfo.image %>">
+                </form>
                 <button id="addToCart" class="btn btn-primary mt-4 p-2">Add to Cart</button>
-                <button id="addToWishlist" class="btn btn-light btn-outline-dark mt-4 ml-4 p-2">Add to Wishlist</button>
+                <button type="submit" form="wishlistForm" id="addRemoveWishlist" class="btn btn-light btn-outline-dark mt-4 ml-4 p-2">
+                    <% if (wishlist) { %>
+                        Remove from Wishlist
+                    <% } else { %>
+                        Add to Wishlist
+                    <% } %>
+                </button>
             </div>
         </div>
         <div class="overview py-3 mb-5">
