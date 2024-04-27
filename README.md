@@ -108,9 +108,9 @@ The images and books data were obtained from Barnes & Noble.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[Node.js]: https://img.shields.io/badge/node.js-215732?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Node.js]: https://img.shields.io/badge/node.js-215732?style=for-the-badge&logo=nodedotjs&logoColor=white
 [Nodejs-url]: https://nodejs.org/en
-[Express]: https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Express]: https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white
 [Express-url]: https://expressjs.com/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
