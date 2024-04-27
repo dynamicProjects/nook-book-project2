@@ -12,12 +12,15 @@
                 <% if (user === '') { %>
                     <p>Please sign in to view your wishlist.</p>
                 <% } else { %>
-                    <div class="row">
-                        <% for (let i = 0; i < wishlist.wishlistBooks.length; i++) { %>
-                            <img class="col-4" src="<%= wishlist.wishlistBooks[i].image %>" onclick="location.href='/api/books/<%= wishlist.wishlistBooks[i].title%>/<%= wishlist.wishlistBooks[i].author%>'" alt="book">
-                        <% } %>
-                    </div>
-                <% } %>
+                    <% if (wishlist === null) { %>
+                        <p>No books found in your wishlist.</p>
+                    <% } else { %>
+                        <div class="row">
+                            <% for (let i = 0; i < wishlist.wishlistBooks.length; i++) { %>
+                                <img class="col-4" src="<%= wishlist.wishlistBooks[i].image %>" onclick="location.href='/api/books/<%= wishlist.wishlistBooks[i].title%>/<%= wishlist.wishlistBooks[i].author%>'" alt="book">
+                            <% } %>
+                        </div>
+                <% }} %>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
