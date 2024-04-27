@@ -48,7 +48,7 @@
             <h2 class="mt-5 pt-5 pb-3">Non-Fiction</h2>
             <div class="booksList d-flex flex-row overflow-auto">
                 <% books.forEach(function(book) { %>
-                    <% if (book.tags.main === "non-fiction") { %>
+                    <% if (book.tags.main === "nonfiction") { %>
                         <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
                     <% } %>
                 <% }); %>
