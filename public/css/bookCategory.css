@@ -5,26 +5,31 @@
     font-style: normal;
 }
 
+.booksList img {
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 575px) {
-    img {
+    .booksList img {
         width: 8em;
     }
 }
 
 @media only screen and (min-width: 576px) {
-    img {
+    .booksList img {
         width: 12em;
     }
 }
 
 @media only screen and (min-width: 992px) {
-    img {
+    .booksList img {
         width: 15em;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    img {
+    .booksList img {
         width: 20em;
+        height: 30em;
     }
 }

@@ -27,18 +27,18 @@
     <%- include('wishlistModal') -%>
     <main>
         <div class="container">
-            <div class="row m-auto">
+            <div class="booksList row m-auto">
                 <% books.forEach(function(book) { %>
                     <% if (category === "Audiobook" || category === "eBook") { %>
                         <% book.purchaseOptions.forEach(function(purchaseOption) { %>
                             <% if (purchaseOption.option === category) { %>
-                                <div class="p-2 col">
+                                <div class="p-2 col-auto">
                                     <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
                                 </div>
                             <% } %>
                         <% }); %>
                     <% } else if (book.tags.main === category) { %>
-                        <div class="p-2 col">
+                        <div class="p-2 col-auto">
                             <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
                         </div>
                     <% } %>

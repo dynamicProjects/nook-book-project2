@@ -55,6 +55,28 @@
             </div>
         </div>
         <div class="booksContainer container-fluid">
+            <h2 class="mt-5 pt-5 pb-3">eBooks</h2>
+            <div class="booksList d-flex flex-row overflow-auto">
+                <% books.forEach(function(book) { %>
+                    <% book.purchaseOptions.forEach(function(purchaseOption) { %>
+                        <% if (purchaseOption.option === "eBook") { %>
+                            <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
+                        <% } %>
+                <% });}); %>
+            </div>
+        </div>
+        <div class="booksContainer container-fluid">
+            <h2 class="mt-5 pt-5 pb-3">Audiobooks</h2>
+            <div class="booksList d-flex flex-row overflow-auto">
+                <% books.forEach(function(book) { %>
+                    <% book.purchaseOptions.forEach(function(purchaseOption) { %>
+                        <% if (purchaseOption.option === "Audiobook") { %>
+                            <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
+                        <% } %>
+                <% });}); %>
+            </div>
+        </div>
+        <div class="booksContainer container-fluid">
             <h2 class="mt-5 pt-5 pb-3">Teens & YA</h2>
             <div class="booksList d-flex flex-row overflow-auto">
                 <% books.forEach(function(book) { %>
@@ -69,26 +91,6 @@
             <div class="booksList d-flex flex-row overflow-auto">
                 <% books.forEach(function(book) { %>
                     <% if (book.tags.main === "kids") { %>
-                        <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
-                    <% } %>
-                <% }); %>
-            </div>
-        </div>
-        <div class="booksContainer container-fluid">
-            <h2 class="mt-5 pt-5 pb-3">Biography</h2>
-            <div class="booksList d-flex flex-row overflow-auto">
-                <% books.forEach(function(book) { %>
-                    <% if (book.tags.main === "biography") { %>
-                        <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
-                    <% } %>
-                <% }); %>
-            </div>
-        </div>
-        <div class="booksContainer container-fluid">
-            <h2 class="mt-5 pt-5 pb-3">Classic</h2>
-            <div class="booksList d-flex flex-row overflow-auto">
-                <% books.forEach(function(book) { %>
-                    <% if (book.tags.main === "classic") { %>
                         <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
                     <% } %>
                 <% }); %>
