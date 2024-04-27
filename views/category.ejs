@@ -29,9 +29,9 @@
         <div class="container">
             <div class="row m-auto">
                 <% books.forEach(function(book) { %>
-                    <% if (category === "audiobooks") { %>
+                    <% if (category === "Audiobook" || category === "eBook") { %>
                         <% book.purchaseOptions.forEach(function(purchaseOption) { %>
-                            <% if (purchaseOption.option === "Audiobook") { %>
+                            <% if (purchaseOption.option === category) { %>
                                 <div class="p-2 col">
                                     <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
                                 </div>
