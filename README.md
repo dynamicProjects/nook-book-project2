@@ -51,7 +51,7 @@ Our project aims to develop a full-stack web app with a focus on backend impleme
 
 
 * [![Node.js][Node.js]][Nodejs-url]
-* [![Express][Express.js]][Express-url]
+* [![Express.js][Express]][Express-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
