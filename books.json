@@ -1274,35 +1274,4 @@
     "pages": "512",
     "productDimensions": "6.12(w) x 9.25(h) x 1.50(d)"
   }
-},
-{
-  "title": "",
-  "image": "",
-  "author": "",
-  "tags": {"main": "kids", "sub": "", "others": ""},
-  "purchaseOptions": [{
-    "option": "hardcover",
-    "price": "$31.50"
-  },
-  {
-    "option": "paperback",
-    "price": "$26.99"
-  },
-  {
-    "option": "eBook",
-    "price": "$14.99"
-  },
-  {
-    "option": "Audiobook",
-    "price": "$29.25"
-  }],
-  "overview": "",
-  "productDetails": {
-    "ISBN": "",
-    "publisher": "",
-    "publicationDate": "",
-    "pages": "",
-    "productDimensions": "8.90(w) x 10.90(h) x 0.50(d)",
-    "ageRange": ""
-  }
 }]

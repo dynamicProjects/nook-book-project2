@@ -29,7 +29,15 @@
         <div class="container">
             <div class="row m-auto">
                 <% books.forEach(function(book) { %>
-                    <% if (book.tags.main === category) { %>
+                    <% if (category === "audiobooks") { %>
+                        <% book.purchaseOptions.forEach(function(purchaseOption) { %>
+                            <% if (purchaseOption.option === "Audiobook") { %>
+                                <div class="p-2 col">
+                                    <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
+                                </div>
+                            <% } %>
+                        <% }); %>
+                    <% } else if (book.tags.main === category) { %>
                         <div class="p-2 col">
                             <img src="<%= book.image %>" onclick="location.href='/api/books/<%= book.title%>/<%= book.author%>'" alt="<%= book.title%>">
                         </div>
