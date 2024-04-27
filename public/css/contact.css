@@ -4,7 +4,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
   }
   
-  .container {
+  .contactBody {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -32,38 +32,38 @@ body, html {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
   
-  .container h1 {
+  .contactBody .form-container h1 {
     margin-top: 0;
   }
   
-  .container p {
+  .contactBody .form-container p {
     margin-bottom: 20px;
   }
   
-  .input-group {
+  .form-container .input-group {
     margin-bottom: 20px;
   }
   
-  label {
+  .form-container label {
     display: block;
     margin-bottom: 5px;
     color: #333;
     font-weight: bold;
   }
   
-  input,
-  textarea {
+  .form-container input,
+  .form-container textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
   
-  textarea {
+  .form-container textarea {
     resize: vertical;
   }
   
-  button[type="submit"] {
+  .formSubmitButton {
     width: 100%;
     padding: 10px;
     border: none;
@@ -74,7 +74,7 @@ body, html {
     transition: background-color 0.3s ease;
   }
   
-  button[type="submit"]:hover {
+  .formSubmitButton:hover {
     background-color: #0056b3;
   }
   

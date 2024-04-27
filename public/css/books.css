@@ -17,6 +17,7 @@
 
 .booksList img {
     padding: 0.5em;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 575px) {
