@@ -87,6 +87,7 @@ Our project aims to develop a full-stack web app with a focus on backend impleme
    cd nook-book-project2
    node start
    ```
+   All the data is stored in the repo as JSON files and database will be created when you run ```node start```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
